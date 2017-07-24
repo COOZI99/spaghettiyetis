@@ -1,0 +1,17 @@
+body {
+  background-color: gold;
+  color: blue
+}
+input{
+  border-color: blue;
+}
+.form{
+  display: flex;
+  padding: 20px;
+  border: 5px double blue;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
