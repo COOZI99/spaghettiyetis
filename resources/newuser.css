@@ -1,11 +1,16 @@
 body {
-  background-color: gold;
+
+  background-size: contain;
   color: blue
 }
 input{
-  border-color: blue;
+  border-color: darkblue;
+  height: 20px ;
+  font-size: 18px;
 }
 .form{
+  font-size: 200%;
+  background-color: goldenrod;
   display: flex;
   padding: 20px;
   border: 5px double blue;
@@ -13,5 +18,25 @@ input{
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  text-align: justify;
+
+}
+#normal {
+  border-color: blue;
+  box-shadow: 7px 7px 5px var(--box-shadow-color);
+  --box-shadow-color: midnightblue;
+  color: white;
+  background-color: darkblue;
+  height: auto;
+  font-size: 30px;
+
+
+}
+h1{
+  color: darkblue;
+  font-size: 220%;
+  font-weight: 1400;
+  text-align:justify;
+  text-align: center;
 
 }
