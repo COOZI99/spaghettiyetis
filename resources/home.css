@@ -66,3 +66,6 @@ body{
   background-color: #D3D3D3;
 
 }
+#password{
+   -webkit-text-security: disc;
+}
