@@ -21,6 +21,11 @@ class User(ndb.Model):
     username = ndb.StringProperty()
     password = ndb.StringProperty()
 
+class LevelUp():
+    character = game.Person("Yes", 40, 5, 5, 5, "Fire", "Potion")
+    level = 1
+    experience = 0
+    checkpoint = 0
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
