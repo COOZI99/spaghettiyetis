@@ -8,20 +8,20 @@
 
   <body>
     <section class= box>
-      <h1>Welcome to (Insert Title)</h1>
+      <h1>Welcome to (Insert Title)</h1> <br>
   {% if invalid == True %}
   <p>incorrect username or password</p>
   {% endif %}
         <div id="first">
           <form method="post" action="/">
-            <input class="color" id="user" type="text" placeholder="username" name="username"></input>
-            <input class="color" id="password" type="text" placeholder="password" name="password"></input>
-            <input type="submit" value="login"></input>
+            <input class="color" id="user" type="text" placeholder="Username" name="username"></input>
+            <input class="color" id="password" type="text" placeholder="Password" name="password"></input>
+            <input id="button1" type="submit" value="Login"></input> <br>
         </div>
         <div id="second">
           </form>
           <form method="post" action="/new_user">
-            <input type="submit" value="create new account"></input>
+          <br>  <input id="button2" type="submit" value="Create New Account"></input>
           </form>
         </div>
     </section>
