@@ -31,16 +31,17 @@ class HomePage(webapp2.RequestHandler):
         user = user_key.get()
         if not user:
             invalid = True
-            self.redirect('/')
         else:
             self.redirect('/game')
         var = {'user' : user, 'invalid': invalid}
+        template = env.get_template('home.html')
         self.response.out.write(template.render(var))
 class NewUserPage(webapp2.RequestHandler):
     def get(self):
         invalid = False
     def post(self):
-        invalid = False
+        template = env.get_template('newuser.html')
+        self.response.out.write(template.render())
 
 
 class GamePage(webapp2.RequestHandler):
