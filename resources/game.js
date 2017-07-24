@@ -1,3 +1,4 @@
+
 var canvas = document.getElementById("room");
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";

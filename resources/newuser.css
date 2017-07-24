@@ -15,7 +15,8 @@ input{
   background-color: goldenrod;
   display: flex;
   padding: 20px;
-  border: 5px double blue;
+  border: 7px double blue;
+  border-width: 10px;
   margin: 10px;
   justify-content: center;
   flex-direction: column;
@@ -35,11 +36,12 @@ input{
 
 }
 h1{
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
   color: darkblue;
-  font-size: 220%;
+  font-size: 200%;
   font-weight: 1400;
   text-align:justify;
-  text-align: center;
+  text-align: left;
 
 
 }
