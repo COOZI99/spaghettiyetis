@@ -6,11 +6,11 @@ ctx.fillRect(0, 0, 150, 75);
 
 function setup(){
   $('body').keydown(whileMoving);
-  $('body').keyup(whileMoving);
+  $('body').keyup(whileStatic);
 }
 
 function whileMoving(e){
-  console.log(e.currentTarget)
+  console.log(e.which);
 }
 
 $(document).ready(setup);
