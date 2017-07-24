@@ -1,8 +1,28 @@
 h1 {
+  font-size: 300%;
   margin: auto;
   text-align: center;
+  color: darkblue;
 }
 
 input {
   border-color: blue;
+
+}
+
+.box {
+  display: flex;
+  padding: 20px;
+  border: 5px double blue;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: goldenrod;
+}
+
+input[type="text"], textarea {
+
+  background-color : #CECECE;
+
 }

@@ -7,22 +7,22 @@
   </head>
 
   <body>
-    <h1>Welcome to (Insert Title)</h1>
-    {% if invalid == True %}
-    <p> incorrect username or password </p>
-    {% endif %}
-      <div id="first">
-        <form method="get" action="/">
-          <input id="user" type="text"></input>
-          <input id="password" type="text"></input>
-          <input type="submit" value="login"></input>
-      </div>
-      <div id="second">
-        </form>
-        <form method="post" action="/new_user">
-          <input type="submit" value="create new account"></input>
-        </form>
-      </div>
+    <section class= box>
+      <h1>Welcome to (Insert Title)</h1>
+
+        <div id="first">
+          <form method="get" action="/">
+            <input class="color" id="user" type="text" placeholder="username"></input>
+            <input class="color" id="password" type="text" placeholder="password"></input>
+            <input type="submit" value="login"></input>
+        </div>
+        <div id="second">
+          </form>
+          <form method="post" action="/new_user">
+            <input type="submit" value="create new account"></input>
+          </form>
+        </div>
+    </section>
   </body>
 
 </html>
