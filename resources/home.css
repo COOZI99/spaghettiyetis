@@ -12,7 +12,7 @@ p {
 input {
   border-color: blue;
   text-align: center;
-
+  color: darkblue;
 }
 
 .box {
@@ -29,6 +29,9 @@ input {
 input[type="text"], textarea {
 
   background-color : #CECECE;
+height: 22px;
+font-size: 20px;
+
 
 }
 
@@ -37,4 +40,27 @@ div {
   display: inline;
   text-align: center;
   vertical-align: middle;
+}
+#button1{
+  border-color: blue;
+  box-shadow: 5px 5px 5px var(--box-shadow-color);
+  --box-shadow-color: midnightblue;
+  color: white;
+  background-color: darkblue;
+  height: 32px;
+  width: 80px;
+  font-size: 16px;
+}
+#button2{
+  box-shadow: 5px 5px 5px var(--box-shadow-color);
+  --box-shadow-color: midnightblue;
+  height: auto;
+  width: 250px;
+  height: 35px;
+  color: darkblue;
+  font-weight: bold;
+  font-size: 15px;
+}
+body{
+  background-color: #D3D3D3;
 }

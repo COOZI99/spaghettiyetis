@@ -1,13 +1,14 @@
 body {
-
+  background-color: #D3D3D3;
   background-size: contain;
   color: blue;
-  font-family:"Courier New", Courier, monospace
+
 }
 input{
-  border-color: darkblue;
+  border-color: blue;
   height: 23px ;
   font-size: 20px;
+  color: darkblue;
 }
 .form{
   font-size: 200%;
@@ -39,10 +40,15 @@ h1{
   font-weight: 1400;
   text-align:justify;
   text-align: center;
-  font-family: "Arial Black", Gadget, sans-serif;
+
 
 }
 p1{
   font-weight: bold;
   color: darkblue;
+}
+input[type="text"], textarea {
+
+  background-color : #CECECE;
+
 }
