@@ -18,10 +18,10 @@ env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file
 + '/templates'))
 
 class User(ndb.Model):
-    username = ndb.KeyProperty()
-    password = ndb.KeyProperty()
+    username = ndb.StringProperty()
+    password = ndb.StringProperty()
+    
 
-invalid = False
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('home.html')
@@ -32,13 +32,21 @@ class HomePage(webapp2.RequestHandler):
         if not user:
             invalid = True
         else:
+            invalid = False
             self.redirect('/game')
         var = {'user' : user, 'invalid': invalid}
         template = env.get_template('home.html')
         self.response.out.write(template.render(var))
 class NewUserPage(webapp2.RequestHandler):
     def get(self):
-        invalid = False
+        user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        user = user_key.get()
+        if not user:
+            user = User(username = self.request.get('username'),
+                        password = self.request.get('password'))
+            user.key = user_key
+            user.put()
+            self.redirect('/game')
     def post(self):
         template = env.get_template('newuser.html')
         self.response.out.write(template.render())
