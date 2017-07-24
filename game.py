@@ -97,7 +97,7 @@ class Person:
         bar_ticks = (self.hp / self.maxhp) * 100 / 2
 
         while bar_ticks > 0:
-            hp_bar += "█"
+            hp_bar += " "
             bar_ticks -= 1
 
         while len(hp_bar) < 50:
@@ -129,14 +129,14 @@ class Person:
         mp_ticks = (self.mp / self.maxmp) * 100 / 10
 
         while bar_ticks > 0:
-            hp_bar += "█"
+            hp_bar += " "
             bar_ticks -= 1
 
         while len(hp_bar) < 25:
             hp_bar += " "
 
         while mp_ticks > 0:
-            mp_bar += "█"
+            mp_bar += " "
             mp_ticks -= 1
 
         while len(mp_bar) < 10:
@@ -187,7 +187,3 @@ class Person:
             self.choose_enemy_spell()
         else:
             return spell, magic_dmg
-
-
-
-

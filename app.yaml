@@ -5,7 +5,7 @@ service: spaghettiyetis
 
 handlers:
 - url: /.*
-  scripts: main.app
+  script: main.app
 
 libraries:
 - name: jinja2
