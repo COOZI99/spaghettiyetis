@@ -20,7 +20,7 @@ env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file
 class User(ndb.Model):
     username = ndb.StringProperty()
     password = ndb.StringProperty()
-    
+
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -54,7 +54,8 @@ class NewUserPage(webapp2.RequestHandler):
 
 class GamePage(webapp2.RequestHandler):
     def get(self):
-        invalid = False
+        template = env.get_template('game.html')
+        self.response.out.write(template.render())
     def post(self):
         invalid = False
 
