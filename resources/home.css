@@ -5,6 +5,10 @@ h1 {
   color: darkblue;
 }
 
+p {
+  text-align: center;
+}
+
 input {
   border-color: blue;
   text-align: center;
