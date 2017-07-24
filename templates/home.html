@@ -2,16 +2,22 @@
 <html>
 
   <head>
+    <link type = "text/css" rel="stylesheet" href="../resources/home.css">
     <title>Text game home page</title>
   </head>
 
   <body>
     <h1>Welcome to (Insert Title)</h1>
-      <div>
-        <form method="post" action="/game">
+    {% if invalid = True %}
+    <p> incorrect username or password </p>
+    {% endif %}
+      <div id="first">
+        <form method="get" action="/">
           <input id="user" type="text"></input>
           <input id="password" type="text"></input>
           <input type="submit" value="login"></input>
+      </div>
+      <div id="second">
         </form>
         <form method="post" action="/new_user">
           <input type="submit" value="create new account"></input>
