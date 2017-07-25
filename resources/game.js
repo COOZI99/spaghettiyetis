@@ -8,6 +8,8 @@ var isFirst = true;
 var s = 0;
 var d = 0;
 var enemyEncounter;
+//states will be used to stop funtion whileMoving to work
+var state = 0;
 function whileMoving(e){
   var num = e.which;
   console.log(num + 'why');
@@ -66,7 +68,9 @@ function whileStatic(e){
 
 function battle(){
   $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "50%",});
+  $("#character").css({marginLeft: "40%",});
+  $("#character").off("#character");
+
 
 
 }
