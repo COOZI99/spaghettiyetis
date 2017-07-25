@@ -25,7 +25,9 @@ class User(ndb.Model):
     checkpoint = ndb.IntegerProperty()
     character = game.Person(ndb.StringProperty(), ndb.IntegerProperty(), ndb.IntegerProperty(),
                             ndb.IntegerProperty(), ndb.IntegerProperty(), ndb.StringProperty(),
-                            ndb.StringProperty())
+                            ndb.StringProperty())                        
+
+
 class Level(ndb.Model):
 
     level = ndb.IntegerProperty()
