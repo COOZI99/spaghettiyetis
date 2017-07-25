@@ -8,11 +8,9 @@
   <title> (Insert Title Here) </title>
 </head>
 <body>
-<<<<<<< HEAD
+
   <p> {{user.hp}}/{{user.hp}}</p>
-=======
-  <p>{{ user.level }}</p>
->>>>>>> 6a64f1715f0230fe1262c04f99161309a132d4ec
+
   <img id = "character" src="../resources/walkingright.gif" />
   <section class = "battle_screen">
     <input id="fight" type="button" value = "Fight"/>
@@ -20,7 +18,15 @@
     <input id="escape" type="button" value = "Escape"/>
     <img id = "enemy" src = "../resources/bonesattack.gif"/>
   </section>
-
-  
+  <section class = "status"/>
+    <p id = "health"> {{user.hp}}</p>
+    <p id = "attack"> {{user.attck}}</p>
+    <p id = "magic"> {{user.mp}} </p>
+    <p id = "item1"> {{user.item1}}</p>
+    <p id = "item1"> {{user.item1}}</p>
+    <p id = "item1"> {{user.item1}}</p> 
+    <p id = "exp"> {{user.experience}}</p>
+    <p id = "expNeeded"> {{user.exp_needed}}</p>
+  </section>
 </body>
 </html>

@@ -4,8 +4,12 @@ body {
 }
 
 .battle_screen{
-  display:flex;
+  display: none;
 
+}
+
+.status{
+  display: none;
 }
 #fight{
   height: 18px;

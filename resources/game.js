@@ -1,16 +1,25 @@
 
 function setup(){
+  $('#health').text("hi");
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
   console.log('help');
 }
+
+
+console.log(Hp);
 var isFirst = true;
 var s = 0;
 var d = 0;
 var enemyEncounter;
+
+function getHealth(){
+  return $('#health').text()
+}
 function whileMoving(e){
   var num = e.which;
-  console.log(num + 'why');
+
+  console.log(num + 'why ' + getHealth());
   if(e.which == 87){ //w
     if (isFirst){
       $("#character").attr('src', "../resources/walkingup.gif");
