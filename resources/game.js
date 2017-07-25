@@ -21,7 +21,6 @@ function whileMoving(e){
   else if(e.which == 65){
     if((Math.random() * 101) < 10){
       console.log("Enemy found!")
-      $(".")
     }
     $("#character").animate({marginLeft: (d - 10)}, 50);
     d -= 10;
