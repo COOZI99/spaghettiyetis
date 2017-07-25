@@ -5,25 +5,21 @@ body {
 }
 
 .battle_screen{
-<<<<<<< HEAD
+
   display: none;
 
 }
 
 .status{
   display: none;
-=======
-display: none;
-<<<<<<< HEAD
 
-=======
->>>>>>> 7d5883cbd757cdac21186039f03a7817ab41add5
+
+
 
 }
 .buttons{
   display: flex;
   flex-direction: row;
->>>>>>> 0382a6bba40dfc8b46a03f0c686355cc78226b17
 }
 #fight{
   height: 18px;
