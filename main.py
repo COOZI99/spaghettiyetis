@@ -25,7 +25,9 @@ class User(ndb.Model):
     checkpoint = ndb.IntegerProperty()
     character = game.Person(ndb.StringProperty(), ndb.IntegerProperty(), ndb.IntegerProperty(),
                             ndb.IntegerProperty(), ndb.IntegerProperty(), ndb.StringProperty(),
-                            ndb.StringProperty())
+                            ndb.StringProperty())                        
+
+
 class Level(ndb.Model):
 
     level = ndb.IntegerProperty()
@@ -60,8 +62,7 @@ class NewUserPage(webapp2.RequestHandler):
                         level = 1,
                         experience = 1,
                         checkpoint = 1,
-                        character = game.Person("Yes", 40, 5, 5, 5, "Fire", "Potion"))
-
+                        character = game.Person( "Yes",  40, 5, 5, 5, "Fire", "Potion"))
 
             user.key = user_key
             user.put()
