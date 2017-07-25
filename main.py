@@ -22,16 +22,22 @@ class User(ndb.Model):
     password = ndb.StringProperty()
     level = ndb.IntegerProperty()
     experience = ndb.IntegerProperty()
+    exp_needed = ndb.IntegerProperty()
     checkpoint = ndb.IntegerProperty()
-    character = game.Person(ndb.StringProperty(), ndb.IntegerProperty(), ndb.IntegerProperty(),
-                            ndb.IntegerProperty(), ndb.IntegerProperty(), ndb.StringProperty(),
-                            ndb.StringProperty())
+    hp = ndb.IntegerProperty()
+    attack = ndb.IntegerProperty()
+    mp = ndb.IntegerProperty()
+    item1 = ndb.StringProperty()
+    item2 = ndb.StringProperty()
+    item3 = ndb.StringProperty()
+"""
 class Level(ndb.Model):
 
     level = ndb.IntegerProperty()
     experience = ndb.IntegerProperty()
     checkpoint = ndb.IntegerProperty()
     user_key = ndb.KeyProperty()
+"""
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('home.html')
@@ -59,8 +65,14 @@ class NewUserPage(webapp2.RequestHandler):
                         password = self.request.get('password'),
                         level = 1,
                         experience = 1,
+                        exp_needed = 20,
                         checkpoint = 1,
-                        character = game.Person( "Yes",  40, 5, 5, 5, "Fire", "Potion"))
+                        hp = 40,
+                        attack = 5,
+                        mp = 5,
+                        item1 = "potion",
+                        item2 = "potion",
+                        item3 = "potion")
 
             user.key = user_key
             user.put()
