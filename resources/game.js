@@ -28,7 +28,8 @@ function whileMoving(e){
   } //a
   else if(e.which == 83){
     if((Math.random() * 101) < 10){
-      console.log("Enemy found!")
+      console.log("Enemy found!");
+      battle();
     }
     $("#character").animate({marginTop: (s + 10)}, 50);
     s += 10;
@@ -44,5 +45,9 @@ function whileMoving(e){
 
 function whileStatic(e){
 
+}
+
+function battle(){
+  $(".battle_screen").css({display: "flex"});
 }
 $(document).ready(setup);
