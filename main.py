@@ -21,7 +21,7 @@ class User(ndb.Model):
     username = ndb.StringProperty()
     password = ndb.StringProperty()
 
-class LevelUp():
+class Level():
     character = game.Person("Yes", 40, 5, 5, 5, "Fire", "Potion")
     level = 1
     experience = 0
@@ -34,27 +34,34 @@ class HomePage(webapp2.RequestHandler):
     def post(self):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
+
+        level_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        level = level_key.get()
         if not user:
             invalid = True
         else:
             invalid = False
             self.redirect('/game')
-        var = {'user' : user, 'invalid': invalid}
+        var = {'user' : user, 'level': level 'invalid': invalid}
         template = env.get_template('home.html')
         self.response.out.write(template.render(var))
 class NewUserPage(webapp2.RequestHandler):
     def get(self):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
+
+        level_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        level = level_key.get()
         if not user:
             user = User(username = self.request.get('username'),
                         password = self.request.get('password'))
+            level = Level()
             user.key = user_key
             user.put()
             self.redirect('/')
         else:
             invalid = True
-            var = {'user': user, 'invalid': invalid}
+            var = {'user': user,'level': level 'invalid': invalid}
             template = env.get_template('newuser.html')
             self.response.out.write(template.render(var))
     def post(self):
