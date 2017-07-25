@@ -18,8 +18,7 @@ class Person:
         self.hp = hp
         self.maxmp = mp
         self.mp = mp
-        self.atkl = atk - 10
-        self.atkh = atk + 10
+        self.atk = atk 
         self.df = df
         self.magic = magic
         self.items = items
