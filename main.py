@@ -56,7 +56,6 @@ class NewUserPage(webapp2.RequestHandler):
         template = env.get_template('newuser.html')
         self.response.out.write(template.render())
 
-
 class GamePage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('game.html')

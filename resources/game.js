@@ -1,16 +1,28 @@
 
-var canvas = document.getElementById("room");
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(0, 0, 150, 75);
-
 function setup(){
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
+  console.log('help');
 }
 
 function whileMoving(e){
-  console.log(e.which);
+  var num = e.which;
+  console.log(num + 'why');
+  if(e.which == 87){ //w
+
+  }
+  else if(e.which == 65){
+
+  } //a
+  else if(e.which == 83){
+
+  } //s
+  else if(e.which == 68){
+
+  }//d
 }
 
+function whileStatic(e){
+
+}
 $(document).ready(setup);
