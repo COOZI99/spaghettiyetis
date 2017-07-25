@@ -20,13 +20,18 @@ env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file
 class User(ndb.Model):
     username = ndb.StringProperty()
     password = ndb.StringProperty()
+    level = ndb.IntegerProperty()
+    experience = ndb.IntegerProperty()
+    checkpoint = ndb.IntegerProperty()
+    character = game.Person(ndb.StringProperty(), ndb.IntegerProperty(), ndb.IntegerProperty(),
+                            ndb.IntegerProperty(), ndb.IntegerProperty(), ndb.StringProperty(),
+                            ndb.StringProperty())
+class Level(ndb.Model):
 
-class Level():
-    character = game.Person("Yes", 40, 5, 5, 5, "Fire", "Potion")
-    level = 1
-    experience = 0
-    checkpoint = 0
-
+    level = ndb.IntegerProperty()
+    experience = ndb.IntegerProperty()
+    checkpoint = ndb.IntegerProperty()
+    user_key = ndb.KeyProperty()
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('home.html')
@@ -35,14 +40,12 @@ class HomePage(webapp2.RequestHandler):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
 
-        level_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
-        level = level_key.get()
         if not user:
             invalid = True
         else:
             invalid = False
             self.redirect('/game')
-        var = {'user' : user, 'level': level 'invalid': invalid}
+        var = {'user' : user, 'invalid': invalid}
         template = env.get_template('home.html')
         self.response.out.write(template.render(var))
 class NewUserPage(webapp2.RequestHandler):
@@ -50,18 +53,22 @@ class NewUserPage(webapp2.RequestHandler):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
 
-        level_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
-        level = level_key.get()
+
         if not user:
             user = User(username = self.request.get('username'),
-                        password = self.request.get('password'))
-            level = Level()
+                        password = self.request.get('password'),
+                        level = 1,
+                        experience = 1,
+                        checkpoint = 1,
+                        character = game.Person("Yes", 40, 5, 5, 5, "Fire", "Potion"))
+
+
             user.key = user_key
             user.put()
             self.redirect('/')
         else:
             invalid = True
-            var = {'user': user,'level': level 'invalid': invalid}
+            var = {'user': user, 'invalid': invalid}
             template = env.get_template('newuser.html')
             self.response.out.write(template.render(var))
     def post(self):
@@ -73,8 +80,10 @@ class GamePage(webapp2.RequestHandler):
     def get(self):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
+
+        var = {'user': user}
         template = env.get_template('game.html')
-        self.response.out.write(template.render())
+        self.response.out.write(template.render(var))
     def post(self):
         invalid = False
 
