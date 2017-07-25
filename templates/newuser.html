@@ -7,6 +7,9 @@
 <body>
 <section class = form >
 <h1> Create New User </h1>
+{%if invalid == True%}
+<h2> Username and Password already exist</h2>
+{%endif%}
 <div>
 <form method = "get" action = "/new_user">
 <p1>

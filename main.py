@@ -51,13 +51,21 @@ class NewUserPage(webapp2.RequestHandler):
                         password = self.request.get('password'))
             user.key = user_key
             user.put()
-            self.redirect('/game')
+            self.redirect('/')
+        else:
+            invalid = True
+            var = {'user': user, 'invalid': invalid}
+            template = env.get_template('newuser.html')
+            self.response.out.write(template.render(var))
     def post(self):
         template = env.get_template('newuser.html')
         self.response.out.write(template.render())
 
+
 class GamePage(webapp2.RequestHandler):
     def get(self):
+        user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        user = user_key.get()
         template = env.get_template('game.html')
         self.response.out.write(template.render())
     def post(self):

@@ -2,3 +2,7 @@ body {
   background-image: url("forrest1.png");
   background-size: cover;
 }
+
+.battle_screen{
+  display: none;
+}
