@@ -4,5 +4,45 @@ body {
 }
 
 .battle_screen{
+  display:flex;
 
+}
+#fight{
+  height: 18px;
+  width: 45px;
+  color: white;
+  background-color: red;
+  border: 5px;
+  border-width: thick;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 10px;
+}
+#magic{
+  height: 18px;
+  width: 45px;
+  color: white;
+  background-color: blue;
+  border: 5px;
+  border-width: thick;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 10px;
+}
+#escape{
+  height: 18px;
+  width: 45px;
+  color: white;
+  background-color: goldenrod;
+  border: 5px;
+  border-width: thick;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 10px;
 }

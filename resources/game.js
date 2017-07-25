@@ -50,4 +50,5 @@ function whileStatic(e){
 function battle(){
   $(".battle_screen").css({display: "flex"});
 }
+
 $(document).ready(setup);
