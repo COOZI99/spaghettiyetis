@@ -1,10 +1,12 @@
 body {
   background-image: url("forrest1.png");
   background-size: cover;
+
 }
 
 .battle_screen{
-  display: none;
+display: none;
+margin-left: 50%;
 
 }
 #fight{
