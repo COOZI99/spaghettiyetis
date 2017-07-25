@@ -65,7 +65,9 @@ function whileStatic(e){
 }
 
 function battle(){
-  $(".battle_screen").css({display: "flex"});
+  $(".battle_screen").css({display: "inline-block",});
+  $("#character").css({marginLeft: "50%",});
+
 
 }
 
