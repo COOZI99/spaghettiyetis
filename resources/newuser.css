@@ -57,3 +57,7 @@ input[type="text"], textarea {
 #password{
   -webkit-text-security: disc;
 }
+h2{
+  color: darkblue;
+  font-size: 35px;
+}
