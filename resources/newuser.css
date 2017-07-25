@@ -9,6 +9,7 @@ input{
   height: 23px ;
   font-size: 20px;
   color: darkblue;
+
 }
 .form{
   font-size: 200%;
@@ -33,7 +34,6 @@ input{
   height: auto;
   font-size: 30px;
 
-
 }
 h1{
   font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
@@ -43,11 +43,11 @@ h1{
   text-align:justify;
   text-align: left;
 
-
 }
 p1{
   font-weight: bold;
   color: darkblue;
+
 }
 input[type="text"], textarea {
 
@@ -56,8 +56,10 @@ input[type="text"], textarea {
 }
 #password{
   -webkit-text-security: disc;
+
 }
 h2{
   color: darkblue;
   font-size: 35px;
+  
 }
