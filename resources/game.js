@@ -66,7 +66,7 @@ function whileStatic(e){
 
 function battle(){
   $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "50%",});
+  $("#character").css({marginLeft: "45%",});
 
 
 }

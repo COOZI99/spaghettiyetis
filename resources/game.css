@@ -6,8 +6,11 @@ body {
 
 .battle_screen{
 display: none;
-margin-left: 50%;
 
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
 }
 #fight{
   height: 18px;
