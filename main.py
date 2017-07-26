@@ -101,7 +101,22 @@ class GamePage(webapp2.RequestHandler):
 
 class saveData(webapp2.RequestHandler):
     def post(self):
-        
+        user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        user = user_key.get()
+
+        user = User(username = self.request.get('username'),
+                    password = self.request.get('password'),
+                    level = 1,
+                    experience = 1,
+                    exp_needed = 20,
+                    checkpoint = 1,
+                    hp = 40,
+                    attack = 5,
+                    mp = 5,
+                    speed = 10,
+                    item1 = "potion",
+                    item2 = "potion",
+                    item3 = "potion")
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
