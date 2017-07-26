@@ -145,7 +145,6 @@ function beginFight(e){
 }
 
 function magicAttack(e){
-
 }
 
 function tryToEscape(e){
