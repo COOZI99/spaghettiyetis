@@ -111,7 +111,7 @@ function whileMoving(e){
     }//d
   }
 }
-}
+
 
 function whileStatic(e){
   isFirst = true;
