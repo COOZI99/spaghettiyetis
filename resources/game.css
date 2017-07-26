@@ -122,10 +122,18 @@ p2{
   font-size: 10px;
 }
 
-#door {
+#check{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 100px;
+  height: 100px;
+}
+#door{
   position: absolute;
   right: 0px;
   bottom: 0px;
   height: 100px;
   width: 100px;
+
 }

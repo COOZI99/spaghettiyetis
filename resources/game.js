@@ -5,8 +5,6 @@ function setup(){
   console.log('help');
 }
 
-
-
 var isFirst = true;
 var s = 0;
 var d = 0;
@@ -110,6 +108,12 @@ function whileMoving(e){
       d += 10;
     }//d
   }
+  var right = $('body').width() - d;
+  var cabinR = 100;
+  var top = s;
+  var cabinT = 50;
+  if(right <= cabinR && top <= cabinT){
+    $('form').submit();
 
   var right = $('body').width() - d;
   var doorR = 100;
@@ -117,7 +121,9 @@ function whileMoving(e){
   var doorT = $('body').height() - 100;
   if(right <= doorR && top <= doorT){
     window.location.href = "/game1"
+
   }
+}
 }
 
 
@@ -147,19 +153,19 @@ function beginFight(e){
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
-      $('#health').text(newHealth);
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
       window.location.href = "/"
     }
-    $('#health').text(newHealth);
+    $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
   }
   else{
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
-      $('#health').text(newHealth);
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
       window.location.href = "/"
     }
-    $('#health').text(newHealth);
+    $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
       state = 0;
@@ -183,18 +189,22 @@ function magicAttack(e){
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
+      $('#hHealth').val(newHealth);
       $('#health').text(newHealth);
       window.location.href = "/"
     }
+    $('#hHealth').val(newHealth);
     $('#health').text(newHealth);
   }
   else{
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
+      $('#hHealth').val(newHealth);
       $('#health').text(newHealth);
       window.location.href = "/"
     }
+    $('#hHealth').val(newHealth);
     $('#health').text(newHealth);
     Enemy[1] -= getMagic() * multi;
     $('#damage').text((getMagic() * multi))
@@ -219,4 +229,5 @@ function tryToEscape(e){
 function battleContinues(){
 
 }
+
 $(document).ready(setup);
