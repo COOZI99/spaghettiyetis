@@ -8,13 +8,71 @@ body {
 
   display: none;
 }
-.monkeys{
-  display: inline;
+.status{
+  display:flex;
+  padding: 7px;
+  border: 7px double blue;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 115px;
+  height: 190px;
+  background-color: goldenrod;
+
+}
+p1{
+  color: white;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+p2{
+  color: darkblue;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.health{
+  display: flex;
+  flex-direction: row;
+
+}
+.attack{
+  display: flex;
+  flex-direction: row;
+
+
+}
+.magic{
+  display: flex;
+  flex-direction: row;
+
+}
+.speed{
+  display: flex;
+  flex-direction: row;
+
+}
+.items{
+  display: flex;
+  flex-direction: row;
+
+}
+.exp{
+  display: flex;
+  flex-direction: row;
+
+}
+.expneeded{
+  display: flex;
+  flex-direction: row;
+
 }
 
 .buttons{
   display: flex;
   flex-direction: row;
+
 }
 #fight{
   height: 18px;
