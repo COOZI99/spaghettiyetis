@@ -59,56 +59,57 @@ function createEnemy(){
 var Enemy = [];
 var state = 0;
 function whileMoving(e){
-  if(state == 0){
-  var num = e.which;
+  if (state == 0){
+    var num = e.which;
 
-  console.log(num + 'why ' + getHealth());
-  if(e.which == 87){ //w
-    if (isFirst){
-      $("#character").attr('src', "../resources/walkingup.gif");
-      isFirst = false;
-    }
-    if((Math.random() * 101) < 10){
-      console.log("Enemy found!")
-    }
-    $("#character").animate({marginTop: (s - 10)}, 50);
-    s -= 10;
+    console.log(num + 'why ' + getHealth());
+    if(e.which == 87){ //w
+      if (isFirst){
+        $("#character").attr('src', "../resources/walkingup.gif");
+        isFirst = false;
+      }
+      if((Math.random() * 101) < 10){
+        console.log("Enemy found!")
+      }
+      $("#character").animate({marginTop: (s - 10)}, 50);
+      s -= 10;
 
+    }
+    else if(e.which == 65){
+      if (isFirst){
+        $("#character").attr('src', "../resources/walkingleft.gif");
+        isFirst = false;
+      }
+      if((Math.random() * 101) < 10){
+        console.log("Enemy found!")
+      }
+      $("#character").animate({marginLeft: (d - 10)}, 50);
+      d -= 10;
+    } //a
+    else if(e.which == 83){
+      if (isFirst){
+        $("#character").attr('src', "../resources/walkingdown.gif");
+        isFirst = false;
+      }
+      if((Math.random() * 101) < 10){
+        console.log("Enemy found!");
+        battle();
+      }
+      $("#character").animate({marginTop: (s + 10)}, 50);
+      s += 10;
+    } //s
+    else if(e.which == 68){
+      if (isFirst){
+        $("#character").attr('src', "../resources/walkingright.gif");
+        isFirst = false;
+      }
+      if((Math.random() * 101) < 10){
+        console.log("Enemy found!")
+      }
+      $("#character").animate({marginLeft: (d + 10)}, 50);
+      d += 10;
+    }//d
   }
-  else if(e.which == 65){
-    if (isFirst){
-      $("#character").attr('src', "../resources/walkingleft.gif");
-      isFirst = false;
-    }
-    if((Math.random() * 101) < 10){
-      console.log("Enemy found!")
-    }
-    $("#character").animate({marginLeft: (d - 10)}, 50);
-    d -= 10;
-  } //a
-  else if(e.which == 83){
-    if (isFirst){
-      $("#character").attr('src', "../resources/walkingdown.gif");
-      isFirst = false;
-    }
-    if((Math.random() * 101) < 10){
-      console.log("Enemy found!");
-      battle();
-    }
-    $("#character").animate({marginTop: (s + 10)}, 50);
-    s += 10;
-  } //s
-  else if(e.which == 68){
-    if (isFirst){
-      $("#character").attr('src', "../resources/walkingright.gif");
-      isFirst = false;
-    }
-    if((Math.random() * 101) < 10){
-      console.log("Enemy found!")
-    }
-    $("#character").animate({marginLeft: (d + 10)}, 50);
-    d += 10;
-  }//d
 }
 }
 
