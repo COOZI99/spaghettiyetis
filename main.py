@@ -27,6 +27,7 @@ class User(ndb.Model):
     hp = ndb.IntegerProperty()
     attack = ndb.IntegerProperty()
     mp = ndb.IntegerProperty()
+    speed = ndb.IntegerProperty()
     item1 = ndb.StringProperty()
     item2 = ndb.StringProperty()
     item3 = ndb.StringProperty()
@@ -70,6 +71,7 @@ class NewUserPage(webapp2.RequestHandler):
                         hp = 40,
                         attack = 5,
                         mp = 5,
+                        speed = 10,
                         item1 = "potion",
                         item2 = "potion",
                         item3 = "potion")
