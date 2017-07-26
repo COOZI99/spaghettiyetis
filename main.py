@@ -60,7 +60,6 @@ class NewUserPage(webapp2.RequestHandler):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
 
-
         if not user:
             user = User(username = self.request.get('username'),
                         password = self.request.get('password'),
@@ -100,6 +99,9 @@ class GamePage(webapp2.RequestHandler):
     def post(self):
         invalid = False
 
+class saveData(webapp2.RequestHandler):
+    def post(self):
+        
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
