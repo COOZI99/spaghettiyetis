@@ -84,3 +84,11 @@ li{
   text-align: center;
   font-size: 10px;
 }
+
+#door {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100px;
+}
