@@ -110,6 +110,14 @@ function whileMoving(e){
       d += 10;
     }//d
   }
+
+  var right = $('body').width() - d;
+  var doorR = 100;
+  var top = s;
+  var doorT = $('body').height() - 100;
+  if(right <= doorR && top <= d){
+    window.location.href = "/game1"
+  }
 }
 
 
@@ -205,6 +213,7 @@ function tryToEscape(e){
     }
 
 }
+
 
 
 function battleContinues(){
