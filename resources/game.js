@@ -153,7 +153,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d,});
+        $("#character").css({marginLeft: d});
       }
 
     }
@@ -178,8 +178,8 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d,});
-      }      
+        $("#character").css({marginLeft: d});
+      }
     }
   }
 
@@ -230,6 +230,10 @@ function tryToEscape(e){
     if((escape * 101) > 40){
     state = 0;
     $(".battle_screen").css({display: "none",});
+      if(state == 0){
+        $("#character").css({marginLeft: d});
+      }
+
     }
 
 }
