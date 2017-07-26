@@ -132,13 +132,12 @@ function beginFight(e){
   if(getSpeed() > Enemy[3]){
     Enemy[1] -= getAttack();
     var newHealth = getHealth() - Enemy[2];
-    $('#health').text(String(newHealth) + 'what');
+    $('#health').text(newHealth);
   }
   else{
     var newHealth = getHealth() - Enemy[2];
-    $('#health').text(String(newHealth) + 'what');
+    $('#health').text(newHealth);
     Enemy[1] -= getAttack();
-
   }
 
 
