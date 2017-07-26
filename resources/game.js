@@ -108,29 +108,25 @@ function whileMoving(e){
       d += 10;
     }//d
   }
-  var right = $('body').width() - d;
-  var cabinR = 100;
-  var top = s;
-  var cabinT = 50;
-  if(right <= cabinR && top <= cabinT){
-    $('form').submit();
-  }
-  var right = $('body').width() - d;
-  var doorR = 100;
-  var top = s;
-<<<<<<< HEAD
-  var doorT = $('body').height() - 300;
-  if(right <= doorR && top >= doorT){
-    window.location.href = "/game1"
-=======
-  var doorT = 460;
-  if(right <= doorR && top >= doorT){
+    var right = $('body').width() - d;
+    var cabinR = 100;
+    var top = s;
+    var cabinT = 50;
+    if(right <= cabinR && top <= cabinT){
+      $('form').submit();
+    }
+    var right = $('body').width() - d;
+    var doorR = 100;
+    var doorT = $('body').height() - 386;
+    var top = s;
+    //console.log("right=" + right + " ,top= " + top);
+    if(right <= doorR && top >= doorT){
 
-    window.location.href = "/game1?username=" + $('#username').val() + "&password=" + $('#password').val();
->>>>>>> d94f3dba8faf6665a3b02aca7dae358fa10e99e6
+      window.location.href = "/game1?username=" + $('#username').val() + "&password=" + $('#password').val();
+    }
+
   }
 
-}
 
 
 
@@ -156,6 +152,10 @@ function beginFight(e){
     if(Enemy[1] <= 0){
       state = 0;
       $(".battle_screen").css({display:"none"});
+      if(state == 0){
+        $("#character").css({marginLeft: d,});
+      }
+
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
@@ -177,6 +177,9 @@ function beginFight(e){
     if(Enemy[1] <= 0){
       state = 0;
       $(".battle_screen").css({display:"none"});
+      if(state == 0){
+        $("#character").css({marginLeft: d,});
+      }      
     }
   }
 
