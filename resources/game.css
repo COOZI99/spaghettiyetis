@@ -11,8 +11,8 @@ body {
 }
 
 .status{
-  display:flex;
-  position: fixed;
+  display: flex;
+  position: absolute;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -28,7 +28,7 @@ body {
 
 }
 .monkeys{
-  position: absolute;
+  position: fixed;
   top: -10px;
   left:-20px;
 }
