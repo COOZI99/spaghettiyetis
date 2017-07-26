@@ -106,17 +106,19 @@ class saveData(webapp2.RequestHandler):
 
         user = User(username = self.request.get('username'),
                     password = self.request.get('password'),
-                    level = 1,
-                    experience = 1,
-                    exp_needed = 20,
-                    checkpoint = 1,
-                    hp = 40,
-                    attack = 5,
-                    mp = 5,
-                    speed = 10,
-                    item1 = "potion",
-                    item2 = "potion",
-                    item3 = "potion")
+                    level = self.request.get('level'),
+                    experience = self.request.get('experience'),
+                    exp_needed = self.request.get('expNeeded'),
+                    checkpoint = self.request.get('checkpoint'),
+                    hp = self.request.get('hp'),
+                    attack = self.request.get('attack'),
+                    mp = self.request.get('magicA'),
+                    speed = self.request.get('speed'),
+                    item1 = self.request.get('item1'),
+                    item2 = self.request.get('item2'),
+                    item3 = self.request.get('item3'))
+        user.put()
+        self.redirect('/game')
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
