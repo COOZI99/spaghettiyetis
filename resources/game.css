@@ -1,49 +1,90 @@
 body {
   background-image: url("forrest1.png");
   background-size: cover;
-
+  color: white;
 }
 
 .battle_screen{
 
   display: none;
-
 }
-
 .status{
+<<<<<<< HEAD
+  display:flex;
+  padding: 7px;
+  border: 7px double blue;
+  margin: 10px;
+=======
   display: flex;
   position: absolute;
+>>>>>>> e63eefd80fd33b4d5432b6760d3d99e1acb19d1f
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 1px;
-  border: 10px double blue;
-  margin: 1px;
-  border-width:thick;
-  width: 125px;
-  height: 200px;
+  width: 115px;
+  height: 190px;
   background-color: goldenrod;
-  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
-  padding:
 
 }
+p1{
+  color: white;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+p2{
+  color: darkblue;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.health{
+  display: flex;
+  flex-direction: row;
+
+}
+.attack{
+  display: flex;
+  flex-direction: row;
+
+
+}
+<<<<<<< HEAD
+.magic{
+  display: flex;
+  flex-direction: row;
+
+=======
 .monkeys{
   position: fixed;
   top: -10px;
   left:-20px;
+>>>>>>> e63eefd80fd33b4d5432b6760d3d99e1acb19d1f
 }
-li{
+.speed{
   display: flex;
+  flex-direction: row;
 
-  list-style: none;
-  font-size: 14px;
-  color: darkblue;
+}
+.items{
+  display: flex;
+  flex-direction: row;
+
+}
+.exp{
+  display: flex;
+  flex-direction: row;
+
+}
+.expneeded{
+  display: flex;
+  flex-direction: row;
 
 }
 
 .buttons{
   display: flex;
   flex-direction: row;
+
 }
 #fight{
   height: 18px;
