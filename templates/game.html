@@ -9,7 +9,21 @@
 </head>
 <body>
 
-
+  <section class = "status"/>
+    <div class= "monkeys">
+      <ul>
+      <li id = "health"> Health: {{user.hp}}</li>
+      <li id = "attack"> Attack: {{user.attack}}</li>
+      <li id = "magicA"> Magic: {{user.mp}} </li>
+      <li id = "speed"> Speed: {{user.speed}}</li>
+      <li id = "item1"> Items: <br>{{user.item1}}</li>
+      <li id = "item2"> {{user.item2}}</li>
+      <li id = "item3"> {{user.item3}}</li>
+      <li id = "exp"> exp: {{user.experience}}</li>
+      <li id = "expNeeded"> exp needed: {{user.exp_needed}}</li>
+      </ul>
+    </div>
+  </section>
   <p> {{user.hp}}/{{user.hp}}</p>
 
 
@@ -23,32 +37,7 @@
     <img id = "enemy" src = "../resources/bonesattack.gif"/>
   </section>
 
-  <section class = "status"/>
-<<<<<<< HEAD
-    <p id = "health"> {{user.hp}}</p>
-    <p id = "attack"> {{user.attack}}</p>
-    <p id = "magicA"> {{user.mp}} </p>
-    <p id = "speed"> {{user.speed}}</p>
-    <p id = "item1"> {{user.item1}}</p>
-    <p id = "item2"> {{user.item2}}</p>
-    <p id = "item3"> {{user.item3}}</p>
-    <p id = "exp"> {{user.experience}}</p>
-    <p id = "expNeeded"> {{user.exp_needed}}</p>
-    <p id = "damage"></p>
-=======
-  <ul>
-  <li id = "health"> {{user.hp}}</li> 
-  <li id = "attack"> {{user.attack}}</li>
-  <li id = "magicA"> {{user.mp}} </li>
-  <li id = "speed"> {{user.speed}}</li>
-  <li id = "item1"> {{user.item1}}</li>
-  <li id = "item2"> {{user.item2}}</li>
-  <li id = "item3"> {{user.item3}}</li>
-  <li id = "exp"> {{user.experience}}</li>
-  <li id = "expNeeded"> {{user.exp_needed}}</li>
-  </ul>
->>>>>>> 24323b17957ea7f3ef8d836aeaee2f454e0a5b44
-  </section>
+
 
 </body>
 </html>
