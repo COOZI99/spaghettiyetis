@@ -9,10 +9,15 @@ body {
   display: none;
 }
 .status{
+<<<<<<< HEAD
   display:flex;
   padding: 7px;
   border: 7px double blue;
   margin: 10px;
+=======
+  display: flex;
+  position: absolute;
+>>>>>>> e63eefd80fd33b4d5432b6760d3d99e1acb19d1f
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -43,10 +48,17 @@ p2{
 
 
 }
+<<<<<<< HEAD
 .magic{
   display: flex;
   flex-direction: row;
 
+=======
+.monkeys{
+  position: fixed;
+  top: -10px;
+  left:-20px;
+>>>>>>> e63eefd80fd33b4d5432b6760d3d99e1acb19d1f
 }
 .speed{
   display: flex;
