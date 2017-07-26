@@ -148,6 +148,11 @@ function magicAttack(e){
 }
 
 function tryToEscape(e){
+  var escape = Math.random();
+    if(escape * 101 > 10){
+    state = 0
+    $(".battle_screen").css({display: "none",});
+    }
 
 }
 
