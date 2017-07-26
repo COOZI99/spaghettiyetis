@@ -114,17 +114,24 @@ function whileMoving(e){
   var cabinT = 50;
   if(right <= cabinR && top <= cabinT){
     $('form').submit();
-
+  }
   var right = $('body').width() - d;
   var doorR = 100;
   var top = s;
+<<<<<<< HEAD
   var doorT = $('body').height() - 300;
   if(right <= doorR && top >= doorT){
     window.location.href = "/game1"
+=======
+  var doorT = 460;
+  if(right <= doorR && top >= doorT){
+
+    window.location.href = "/game1?username=" + $('#username').val() + "&password=" + $('#password').val();
+>>>>>>> d94f3dba8faf6665a3b02aca7dae358fa10e99e6
   }
 
 }
-}
+
 
 
 function whileStatic(e){
