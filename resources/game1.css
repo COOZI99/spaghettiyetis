@@ -136,3 +136,17 @@ p2{
   width: 100px;
 
 }
+}
+#logout1{
+color:goldenrod;
+background-color: blue;
+height: 29px;
+width: 60px;
+font-size: 14px;
+font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+text-align: center;
+border: 5px;
+border-width: thick;
+border-radius: 5px 5px 5px 5px;
+border-color: goldenrod;
+}
