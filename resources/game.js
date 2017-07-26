@@ -206,6 +206,7 @@ function tryToEscape(e){
 
 }
 
+
 function battleContinues(){
 
 }

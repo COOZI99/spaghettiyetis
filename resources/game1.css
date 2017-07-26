@@ -1,5 +1,5 @@
 body {
-  background-image: url("forrest1.png");
+  background-image: url("forrest2.png");
   background-size: cover;
   color: white;
 }
@@ -11,7 +11,7 @@ body {
 .status{
   display:flex;
   padding: 7px;
-  border: 7px double mediumblue;
+  border: 7px double blue;
   margin: 10px;
   justify-content: center;
   flex-direction: column;
@@ -19,20 +19,16 @@ body {
   width: 115px;
   height: 190px;
   background-color: goldenrod;
-  border-style: groove;
-  box-shadow: -3px 4px 4px 2px  var(--box-shadow-color);
-  --box-shadow-color: midnightblue;
 
 }
 p1{
-  color: ghostwhite ;
+  color: white;
   font-weight: bold;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }
 p2{
   color: darkblue;
-  font-weight:600;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
@@ -45,12 +41,11 @@ p2{
   display: flex;
   flex-direction: row;
 
-}
 
+}
 .magic{
   display: flex;
   flex-direction: row;
-
 }
 .speed{
   display: flex;
