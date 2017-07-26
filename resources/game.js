@@ -113,8 +113,8 @@ function whileMoving(e){
 
   var right = $('body').width() - d;
   var doorR = 100;
-  var top = $('body').height() - s;
-  var doorT = 100;
+  var top = s;
+  var doorT = $('body').height() - 100;
   if(right <= doorR && top <= doorT){
     window.location.href = "/game1"
   }
