@@ -1,7 +1,11 @@
+html{
+  height: 100%;
+}
 body {
   background-image: url("forrest1.png");
   background-size: cover;
   color: white;
+  height: 100%;
 }
 
 .battle_screen{
