@@ -1,6 +1,5 @@
 
 function setup(){
-  $('#health').text("hi");
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
   console.log('help');
@@ -15,15 +14,15 @@ var enemyEncounter;
 
 
 function getHealth(){
-  return $('#health').text();
+  return Number($('#health').text());
 }
 
 function getAttack(){
-  return $('#attack').text();
+  return Number($('#attack').text());
 }
 
 function getMagic(){
-  return $('#magic').text();
+  return Number($('#magic').text());
 }
 
 function getItem1(){
@@ -43,14 +42,21 @@ function getExp(){
 }
 
 function getExpNeeded(){
-  return $('#expNeeded').text();
+  return Number($('#expNeeded').text());
 }
 
 function getSpeed(){
-  return $('#speed').text();
+  return Number($('#speed').text());
+}
+
+function createEnemy(){
+  var attack = Math.round(Math.random() * 5 + 2);
+  var speed = Math.round(Math.random() * 5 + 8);
+  Enemy.push("Bones", 20, attack, speed);
 }
 
 //states will be used to stop funtion whileMoving to work
+var Enemy = [];
 var state = 0;
 function whileMoving(e){
   if(state == 0){
@@ -118,10 +124,24 @@ function battle(){
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
+  createEnemy();
 
 }
 
 function beginFight(e){
+  if(getSpeed() > Enemy[3]){
+    Enemy[1] -= getAttack();
+    var newHealth = getHealth() - Enemy[2];
+    $('#health').text(String(newHealth) + 'what');
+  }
+  else{
+    var newHealth = getHealth() - Enemy[2];
+    $('#health').text(String(newHealth) + 'what');
+    Enemy[1] -= getAttack();
+
+  }
+
+
 
 }
 
