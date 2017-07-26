@@ -114,17 +114,17 @@ function whileMoving(e){
   var cabinT = 50;
   if(right <= cabinR && top <= cabinT){
     $('form').submit();
-
+  }
   var right = $('body').width() - d;
   var doorR = 100;
   var top = s;
-  var doorT = $('body').height() - 100;
-  if(right <= doorR && top <= doorT){
-    window.location.href = "/game1"
+  var doorT = 460;
+  if(right <= doorR && top >= doorT){
 
+    window.location.href = "/game1?username=" + $('#username').val() + "&password=" + $('#password').val();
   }
 }
-}
+
 
 
 function whileStatic(e){
