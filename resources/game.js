@@ -15,14 +15,51 @@ var enemyEncounter;
 
 
 function getHealth(){
-  return $('#health').text()
+  return $('#health').text();
+}
+
+function getAttack(){
+  return $('#attack').text();
+}
+
+function getMagic(){
+  return $('#magic').text();
+}
+
+function getItem1(){
+  return $('#item1').text();
+}
+
+function getItem2(){
+  return $('#item1').text();
+}
+
+function getItem3(){
+  return $('#item1').text();
+}
+
+function getExp(){
+  return $('#exp').text();
+}
+
+function getExpNeeded(){
+  return $('#expNeeded').text();
+}
+
+function getSpeed(){
+  return $('#speed').text();
 }
 
 //states will be used to stop funtion whileMoving to work
 var state = 0;
 function whileMoving(e){
+<<<<<<< HEAD
   if (state == 0){
     var num = e.which;
+=======
+  if(state == 0){
+  var num = e.which;
+>>>>>>> 5f427487072dc34a42311f5b8d8e16affbd083ca
 
     console.log(num + 'why ' + getHealth());
     if(e.which == 87){ //w
@@ -73,6 +110,7 @@ function whileMoving(e){
     }//d
   }
 }
+}
 
 function whileStatic(e){
   isFirst = true;
@@ -83,10 +121,25 @@ function battle(){
   state = 1;
   $(".battle_screen").css({display: "inline-block",});
   $("#character").css({marginLeft: "40%",});
-  $("#character").off("#character");
-
-
+  $("#fight").click(beginFight);
+  $("#magic").click(magicAttack);
+  $("#escape").click(tryToEscape);
 
 }
 
+function beginFight(e){
+
+}
+
+function magicAttack(e){
+
+}
+
+function tryToEscape(e){
+
+}
+
+function battleContinues(){
+  if()
+}
 $(document).ready(setup);
