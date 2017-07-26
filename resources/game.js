@@ -53,13 +53,8 @@ function getSpeed(){
 //states will be used to stop funtion whileMoving to work
 var state = 0;
 function whileMoving(e){
-<<<<<<< HEAD
   if (state == 0){
     var num = e.which;
-=======
-  if(state == 0){
-  var num = e.which;
->>>>>>> 5f427487072dc34a42311f5b8d8e16affbd083ca
 
     console.log(num + 'why ' + getHealth());
     if(e.which == 87){ //w
