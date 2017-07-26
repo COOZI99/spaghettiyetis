@@ -22,7 +22,7 @@ function getAttack(){
 }
 
 function getMagic(){
-  return Number($('#magic').text());
+  return Number($('#magicA').text());
 }
 
 function getItem1(){
@@ -131,26 +131,75 @@ function battle(){
 function beginFight(e){
   if(getSpeed() > Enemy[3]){
     Enemy[1] -= getAttack();
+    if(Enemy[1] <= 0){
+      state = 0;
+      $(".battle_screen").css({display:"none"});
+    }
     var newHealth = getHealth() - Enemy[2];
+    if(newHealth <= 0){
+      newHealth = 0;
+      $('#health').text(newHealth);
+      window.location.href = "/"
+    }
     $('#health').text(newHealth);
   }
   else{
     var newHealth = getHealth() - Enemy[2];
+    if(newHealth <= 0){
+      newHealth = 0;
+      $('#health').text(newHealth);
+      window.location.href = "/"
+    }
     $('#health').text(newHealth);
     Enemy[1] -= getAttack();
+    if(Enemy[1] <= 0){
+      state = 0;
+      $(".battle_screen").css({display:"none"});
+    }
   }
 
-
+//window.location.href = "/"
 
 }
 
 function magicAttack(e){
+  var multi = Math.round(Math.random() * 4 + 0.5)
+  if(getSpeed() > Enemy[3]){
+    Enemy[1] -= getMagic() * multi;
+    $('#damage').text((getMagic() * multi))
+    if(Enemy[1] <= 0){
+      state = 0;
+      $(".battle_screen").css({display:"none"});
+    }
+    var newHealth = getHealth() - Enemy[2];
+    if(newHealth <= 0){
+      newHealth = 0;
+      $('#health').text(newHealth);
+      window.location.href = "/"
+    }
+    $('#health').text(newHealth);
+  }
+  else{
+    var newHealth = getHealth() - Enemy[2];
+    if(newHealth <= 0){
+      newHealth = 0;
+      $('#health').text(newHealth);
+      window.location.href = "/"
+    }
+    $('#health').text(newHealth);
+    Enemy[1] -= getMagic() * multi;
+    $('#damage').text((getMagic() * multi))
+    if(Enemy[1] <= 0){
+      state = 0;
+      $(".battle_screen").css({display:"none"});
+    }
+}
 }
 
 function tryToEscape(e){
   var escape = Math.random();
-    if(escape * 101 > 10){
-    state = 0
+    if((escape * 101) > 40){
+    state = 0;
     $(".battle_screen").css({display: "none",});
     }
 
