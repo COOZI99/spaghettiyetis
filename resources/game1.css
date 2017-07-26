@@ -11,7 +11,7 @@ body {
 .status{
   display:flex;
   padding: 7px;
-  border: 7px double blue;
+  border: 7px double mediumblue;
   margin: 10px;
   justify-content: center;
   flex-direction: column;
@@ -19,16 +19,20 @@ body {
   width: 115px;
   height: 190px;
   background-color: goldenrod;
+  border-style: groove;
+  box-shadow: -3px 4px 4px 2px  var(--box-shadow-color);
+  --box-shadow-color: midnightblue;
 
 }
 p1{
-  color: white;
+  color: ghostwhite ;
   font-weight: bold;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
 }
 p2{
   color: darkblue;
+  font-weight:600;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
@@ -41,11 +45,12 @@ p2{
   display: flex;
   flex-direction: row;
 
-
 }
+
 .magic{
   display: flex;
   flex-direction: row;
+
 }
 .speed{
   display: flex;
