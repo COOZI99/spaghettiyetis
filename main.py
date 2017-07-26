@@ -99,6 +99,19 @@ class GamePage(webapp2.RequestHandler):
     def post(self):
         invalid = False
 
+class GamePage1(webapp2.RequestHandler):
+    def get(self):
+        user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        user = user_key.get()
+
+        var = {'user': user}
+        template = env.get_template('game1.html')
+        self.response.out.write(template.render(var))
+    def post(self):
+        invalid = False
+
+
+
 class saveData(webapp2.RequestHandler):
     def post(self):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
@@ -123,4 +136,5 @@ app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
 ('/game', GamePage),
+('/game1', GamePage1),
 ])
