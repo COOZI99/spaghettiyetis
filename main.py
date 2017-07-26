@@ -100,6 +100,8 @@ class GamePage(webapp2.RequestHandler):
         invalid = False
 
 class saveData(webapp2.RequestHandler):
+    def post(self):
+        
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
