@@ -11,11 +11,27 @@ body {
 }
 
 .status{
-  display: none;
+  display:flex;
+  position: fixed;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1px;
+  border: 10px double blue;
+  margin: 1px;
+  border-width:thick;
+  width: 100px;
+  height: 180px;
+  background-color: goldenrod;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
 
+}
+li{
+  display: flex;
 
-
-
+  list-style: none;
+  font-size: 14px;
+  color: darkblue;
 }
 .buttons{
   display: flex;
