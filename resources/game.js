@@ -110,6 +110,13 @@ function whileMoving(e){
       d += 10;
     }//d
   }
+  var right = $('body').width() - d;
+  var cabinR = 100;
+  var top = s;
+  var cabinT = 50;
+  if(right <= cabinR && top <= cabinT){
+    $('form').submit();
+  }
 }
 
 
@@ -139,19 +146,19 @@ function beginFight(e){
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
-      $('#health').text(newHealth);
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
       window.location.href = "/"
     }
-    $('#health').text(newHealth);
+    $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
   }
   else{
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
-      $('#health').text(newHealth);
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
       window.location.href = "/"
     }
-    $('#health').text(newHealth);
+    $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
       state = 0;
@@ -175,18 +182,22 @@ function magicAttack(e){
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
+      $('#hHealth').val(newHealth);
       $('#health').text(newHealth);
       window.location.href = "/"
     }
+    $('#hHealth').val(newHealth);
     $('#health').text(newHealth);
   }
   else{
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
+      $('#hHealth').val(newHealth);
       $('#health').text(newHealth);
       window.location.href = "/"
     }
+    $('#hHealth').val(newHealth);
     $('#health').text(newHealth);
     Enemy[1] -= getMagic() * multi;
     $('#damage').text((getMagic() * multi))

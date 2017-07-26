@@ -104,23 +104,30 @@ class saveData(webapp2.RequestHandler):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
         user = user_key.get()
 
+        user_key.delete()
         user = User(username = self.request.get('username'),
                     password = self.request.get('password'),
-                    level = self.request.get('level'),
-                    experience = self.request.get('experience'),
-                    exp_needed = self.request.get('expNeeded'),
-                    checkpoint = self.request.get('checkpoint'),
-                    hp = self.request.get('hp'),
-                    attack = self.request.get('attack'),
-                    mp = self.request.get('magicA'),
-                    speed = self.request.get('speed'),
+                    level = long(self.request.get('level')),
+                    experience = long(self.request.get('experience')),
+                    exp_needed = long(self.request.get('expNeeded')),
+                    checkpoint = long(self.request.get('checkpoint')),
+                    hp = long(self.request.get('hp')),
+                    attack = long(self.request.get('attack')),
+                    mp = long(self.request.get('magicA')),
+                    speed = long(self.request.get('speed')),
                     item1 = self.request.get('item1'),
                     item2 = self.request.get('item2'),
                     item3 = self.request.get('item3'))
+
+        user.key = user_key
+
         user.put()
-        self.redirect('/game')
+        username = user.username
+        password = user.password
+        self.redirect('/game?username=' + username + '&password=' + password)
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
 ('/game', GamePage),
+('/save_data', saveData)
 ])

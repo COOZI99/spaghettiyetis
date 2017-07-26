@@ -13,25 +13,30 @@
   <section class = "status"/>
     <div class= "monkeys">
       <ul>
-      <li>Level: <p id = "level" name = "level">{{user.level}}</p><li>
-      <li>Health:<p id = "health" name="hp">{{user.hp}}</p></li>
-      <li>Attack: <p id = "attack" name="attack">{{user.attack}}</p></li>
-      <li>Magic:<p id = "magicA" name="magicA">  {{user.mp}}</p> </li>
-      <li> Speed: <p id = "speed" name = "speed">{{user.speed}}</p></li>
-      <li> Items: <br><p id="item1" name="item1">{{user.item1}}</p></li>
-      <li> <p id="item2" name="item2">{{user.item2}}</p></li>
-      <li> <p id="item3" name="item3">{{user.item3}}</p></li>
-      <li> exp: <p id="exp" name = "experience">{{user.experience}}</p></li>
-      <li> exp needed: <p id = "expNeeded" name="expNeeded">{{user.exp_needed}}</p></li>
-      <li> Checkpoint <p id="checkpoint" name="checkpoint">{{user.checkpoint}}</p></li>
+
+      <li>Level: <p id = "level">{{user.level}} <input type="hidden" name="level" value="{{user.level}}"></input></p><li>
+      <li>Health:<p id = "health">{{user.hp}}<input type="hidden" name="hp" value="{{user.hp}}"/></p></li>
+      <li>Attack: <p id = "attack">{{user.attack}} <input type="hidden" name="attack" value="{{user.attack}}"></input></p></li>
+      <li>Magic:<p id = "magicA">{{user.mp}} <input type="hidden" name="magicA" value="{{user.mp}}"></input></p> </li>
+      <li> Speed: <p id = "speed">{{user.speed}} <input type="hidden" name="speed" value="{{user.speed}}"></input></p></li>
+      <li> Items: <br><p id="item1">{{user.item1}} <input type="hidden" name="item1" value="{{user.item1}}"></input></p></li>
+      <li> <p id="item2">{{user.item2}} <input type="hidden" name="item2" value="{{user.item2}}"></input></p></li>
+      <li> <p id="item3">{{user.item3}} <input type="hidden" name="item3" value="{{user.item3}}"></input></p></li>
+      <li> exp: <p id="exp">{{user.experience}} <input type="hidden" name="experience" value="{{user.experience}}"></input></p></li>
+      <li> exp needed: <p id = "expNeeded">{{user.exp_needed}} <input type="hidden" name="expNeeded" value="{{user.exp_needed}}"></input></p></li>
+      <li> Checkpoint <p id="checkpoint">{{user.checkpoint}} <input type="hidden" name="checkpoint" value="{{user.checkpoint}}"></input></p></li>
+
       </ul>
     </div>
   </section>
+  <input type = "hidden" name="username" value="{{user.username}}"></input>
+  <input type = "hidden" name = "password" value="{{user.password}}"></input>
 </form>
   <p> {{user.hp}}/{{user.hp}}</p>
 
 
   <img id = "character" src="../resources/walkdown1.png" />
+  <img id = "check" src="../resources/inn.png"/>
   <section class = "battle_screen">
     <div class= buttons>
     <input id="fight" type="button" value = "Fight"/> <br>
