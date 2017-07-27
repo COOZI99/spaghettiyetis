@@ -40,6 +40,7 @@ p2{
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
+
 .health{
   display: flex;
   flex-direction: row;
@@ -157,4 +158,21 @@ p2{
   font-size: 13px;
   font-weight: bold;
   text-align: center;
+}
+#potions{
+  height: 22px;
+  width: 55px;
+  color: darkblue;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 13px;
+}
+p3{
+  color:blue;
 }
