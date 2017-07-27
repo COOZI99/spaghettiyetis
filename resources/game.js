@@ -179,9 +179,14 @@ function battle(){
   $("#escape").click(tryToEscape);
   createEnemy();
 }
-
+/*
+function attackGif(){
+  $("#character").attr('src', "../resources/swordattack.gif").delay(800).attr('src', "../resources/walkdown1.png");
+}
+*/
 function beginFight(e){
   if(getSpeed() > Enemy[3]){
+    //attackGif();
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
       gainExp();
