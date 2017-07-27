@@ -239,9 +239,4 @@ function tryToEscape(e){
 
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 1fb7d6e830364f0085cd723bc0f3d28485e372d4
 $(document).ready(setup);

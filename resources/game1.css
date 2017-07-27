@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   width: 115px;
-  height: 216px;
+  height: 225px;
   background-color: goldenrod;
   border-style: groove;
   box-shadow: 0px 0px 2px 2px ghostwhite;
@@ -163,4 +163,18 @@ p2{
   right:0;
   margin-top: 200px;
   margin-right: 0px;
+}
+#potions{
+  height: 22px;
+  width: 55px;
+  color: darkblue;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 13px;
 }
