@@ -33,7 +33,7 @@ function useItem(){
 
 
 function getExp(){
-  return $('#exp').text();
+  return Number($('#exp').text());
 }
 
 function getExpNeeded(){
@@ -44,9 +44,14 @@ function getSpeed(){
   return Number($('#speed').text());
 }
 
+function getLevel(){
+  return Number($('#level').text());
+}
+
 function createEnemy(){
   var attack = Math.round(Math.random() * 5 + 2);
   var speed = Math.round(Math.random() * 5 + 8);
+  Enemy = [];
   Enemy.push("Bones", 20, attack, speed);
 }
 
@@ -156,7 +161,7 @@ function beginFight(e){
   if(getSpeed() > Enemy[3]){
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
-
+      gainExp();
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
@@ -182,6 +187,7 @@ function beginFight(e){
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
+      gainExp();
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
@@ -199,6 +205,7 @@ function magicAttack(e){
   if(getSpeed() > Enemy[3]){
     Enemy[1] -= getMagic() * multi;
     if(Enemy[1] <= 0){
+      gainExp();
       state = 0;
       $(".battle_screen").css({display:"none"});
     }
@@ -221,6 +228,7 @@ function magicAttack(e){
     Enemy[1] -= getMagic() * multi;
     $('#damage').text((getMagic() * multi))
     if(Enemy[1] <= 0){
+      gainExp();
       state = 0;
       $(".battle_screen").css({display:"none"});
     }
@@ -240,4 +248,23 @@ function tryToEscape(e){
 
 }
 
+function gainExp(){
+  var ex = getExp() + 10;
+  $('#exp').html(ex + '<input type = "hidden" name="experience" value' + ex + '>');
+  if(getExp() >= getExpNeeded()){
+    var level = getLevel() + 1;
+    var attack = getAttack() + 5;
+    var magic = getMagic() + 1;
+    //var maxHealth = getMaxHealth() + 10;
+    //var health = getMaxHealth() + 10;
+    var speed = getSpeed() + 5;
+    $('#level').html(level + '<input type = "hidden" name="level" value' + level + '>');
+    $('#attack').html(attack + '<input type = "hidden" name="attack" value' + attack + '>');
+    $('#magicA').html(magic + '<input type = "hidden" name="magicA" value' + magic + '>');
+    $('#speed').html(speed + '<input type = "hidden" name="level" value' + speed + '>');
+    var newNeed = getExpNeeded() + 10 * level;
+    $('#expNeeded').html(newNeed + '<input type = "hidden" name="expNeeded" value' + newNeed + '>');
+  }
+}
 $(document).ready(setup);
+//I Changed some stuff
