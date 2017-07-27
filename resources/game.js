@@ -26,10 +26,23 @@ function getMagic(){
   return Number($('#magicA').text());
 }
 
-function useItem(){
+function useItem(e){
+  var potion = $(e.currentTarget);
   var newHealth = getHealth() + 30;
-  $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
+  console.log('No');
+  if(potion.text() == " potion"){
+  if(newHealth >= getMaxHealth()){
+    console.log('help');
+    $('#health').html(getMaxHealth() + '<input type = "hidden" name = "hp" value=' + getMaxHealth() + '>');
+    potion.html('---------- <input type = "hidden" name =' + potion.attr('id') + ' value=---------->');
+    }
+    else{
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
+      potion.html('---------- <input type = "hidden" name =' + potion.attr('id') + ' value=---------->');
+    }
+  }
 }
+
 
 
 function getExp(){
@@ -46,6 +59,10 @@ function getSpeed(){
 
 function getLevel(){
   return Number($('#level').text());
+}
+
+function getMaxHealth(){
+  return Number($('#maxHealth').text());
 }
 
 function createEnemy(){
@@ -141,27 +158,26 @@ function whileStatic(e){
 }
 
 function beginAnimateBattle(){
-  $("#character").css({height: "183px", width: "189px"});
+  $('#character').css({height: "183px", width: "189px"});
   $("#enemy").css({height: "183px", width: "150px"});
   $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "30%",});
-  $("html").fadeIn();
+  $('#character').css({marginLeft: '30%'});
+  $('html').fadeIn();
 }
 
 function endAnimateBattle(){
-  $("#character").css({height: "61px", width: "63px"});
-  $("#character").css({marginLeft: d});
-  $("html").fadeIn();
+  console.log('fade In');
+  $('#character').css({height: '61px', width: '63px'});
+  $('#character').css({marginLeft: d});
+  $('html').fadeIn();
 }
-
 function battle(){
   state = 1;
-  $("html").fadeOut(beginAnimateBattle);
+  $('html').fadeOut(beginAnimateBattle);
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
   createEnemy();
-
 }
 
 function beginFight(e){
@@ -172,9 +188,8 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("html").fadeOut(endAnimateBattle);
+        $('html').fadeOut(endAnimateBattle);
       }
-
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
@@ -198,7 +213,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("html").fadeOut(endAnimateBattle);
+        $('html').fadeOut(endAnimateBattle);
       }
     }
   }
@@ -214,7 +229,8 @@ function magicAttack(e){
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
-      $(".battle_screen").css({display:"none"});
+      $('.battle_screen').css({display: "none"});
+      $('html').fadeOut(endAnimateBattle);
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
@@ -237,7 +253,8 @@ function magicAttack(e){
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
-      $(".battle_screen").css({display:"none"});
+      $('.battle_screen').css({display: "none"});
+      $('html').fadeOut(endAnimateBattle);
     }
   }
 }
@@ -248,31 +265,32 @@ function tryToEscape(e){
     state = 0;
     $(".battle_screen").css({display: "none",});
       if(state == 0){
-        $("html").fadeOut(endAnimateBattle);
-
+        $('html').fadeOut(endAnimateBattle);
       }
 
     }
-
 }
 
 function gainExp(){
   var ex = getExp() + 10;
-  $('#exp').html(ex + '<input type = "hidden" name="experience" value' + ex + '>');
+  $('#exp').html(ex + '<input type = "hidden" name="experience" value=' + ex + '>');
   if(getExp() >= getExpNeeded()){
     var level = getLevel() + 1;
     var attack = getAttack() + 5;
     var magic = getMagic() + 1;
-    //var maxHealth = getMaxHealth() + 10;
-    //var health = getMaxHealth() + 10;
+    var maxHealth = getMaxHealth() + 10;
+    var health = getMaxHealth() + 10;
     var speed = getSpeed() + 5;
-    $('#level').html(level + '<input type = "hidden" name="level" value' + level + '>');
-    $('#attack').html(attack + '<input type = "hidden" name="attack" value' + attack + '>');
-    $('#magicA').html(magic + '<input type = "hidden" name="magicA" value' + magic + '>');
-    $('#speed').html(speed + '<input type = "hidden" name="level" value' + speed + '>');
+    $('#level').html(level + '<input type = "hidden" name="level" value=' + level + '>');
+    $('#attack').html(attack + '<input type = "hidden" name="attack" value=' + attack + '>');
+    $('#magicA').html(magic + '<input type = "hidden" name="magicA" value=' + magic + '>');
+    $('#speed').html(speed + '<input type = "hidden" name="speed" value=' + speed + '>');
+    $('#health').html(health + '<input type = "hidden" name="health" value=' + health + '>');
+    $('#maxHealth').html(maxHealth + '<input type = "hidden" name="maxHp" value=' + maxHealth + '>');
     var newNeed = getExpNeeded() + 10 * level;
-    $('#expNeeded').html(newNeed + '<input type = "hidden" name="expNeeded" value' + newNeed + '>');
+    $('#expNeeded').html(newNeed + '<input type = "hidden" name="expNeeded" value=' + newNeed + '>');
   }
 }
+
 $(document).ready(setup);
 //I Changed some stuff
