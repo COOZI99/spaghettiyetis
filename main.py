@@ -51,7 +51,10 @@ class HomePage(webapp2.RequestHandler):
             invalid = True
         else:
             invalid = False
-            self.redirect('/game')
+            if user.checkpoint == 1:
+                self.redirect('/game?username=' + user.username + '&password=' + user.password)
+            elif user.checkpoint == 2:
+                self.redirect('/game1?username=' + user.username + '&password=' + user.password)
         var = {'user' : user, 'invalid': invalid}
         template = env.get_template('home.html')
         self.response.out.write(template.render(var))
