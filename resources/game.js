@@ -3,6 +3,9 @@ function setup(){
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
   console.log('help');
+  $("#item1").click(useItem)
+  $("#item2").click(useItem)
+  $("#item2").click(useItem)
 }
 
 var isFirst = true;
@@ -23,19 +26,11 @@ function getMagic(){
   return Number($('#magicA').text());
 }
 
-function getItem1(){
-  $("#item1").click()
-
-  return $('#item1').text();
+function useItem(){
+  var newHealth = getHealth() + 30;
+  $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
 }
 
-function getItem2(){
-  return $('#item1').text();
-}
-
-function getItem3(){
-  return $('#item1').text();
-}
 
 function getExp(){
   return $('#exp').text();
