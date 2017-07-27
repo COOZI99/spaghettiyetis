@@ -178,7 +178,6 @@ function beginFight(e){
       if(state == 0){
         $("#character").css({marginLeft: d});
       }
-
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
