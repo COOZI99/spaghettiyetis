@@ -121,7 +121,7 @@ class GamePage2(webapp2.RequestHandler):
         user = user_key.get()
 
         var = {'user': user}
-        template = env.get_template('game1.html')
+        template = env.get_template('game2.html')
         self.response.out.write(template.render(var))
 
 

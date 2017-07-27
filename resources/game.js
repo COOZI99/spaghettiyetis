@@ -77,6 +77,7 @@ function createEnemy(){
   var speed = Math.round(Math.random() * 5 + 8);
   Enemy = [];
   Enemy.push("Bones", 20, attack, speed);
+  $('#enemyH').text(Enemy[1]);
 }
 
 //states will be used to stop funtion whileMoving to work
