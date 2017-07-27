@@ -157,15 +157,27 @@ function whileStatic(e){
   $("#character").attr('src', "../resources/walkdown1.png");
 }
 
+function beginAnimateBattle(){
+  $('#character').css({height: "183px", width: "189px"});
+  $("#enemy").css({height: "183px", width: "150px"});
+  $(".battle_screen").css({display: "inline-block",});
+  $('#character').css({marginLeft: '30%'});
+  $('html').fadeIn();
+}
+
+function endAnimateBattle(){
+  console.log('fade In');
+  $('#character').css({height: '61px', width: '63px'});
+  $('#character').css({marginLeft: d});
+  $('html').fadeIn();
+}
 function battle(){
   state = 1;
-  $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "40%",});
+  $('html').fadeOut(beginAnimateBattle);
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
   createEnemy();
-
 }
 
 function beginFight(e){
@@ -176,7 +188,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $('html').fadeOut(endAnimateBattle);
       }
     }
     var newHealth = getHealth() - Enemy[2];
@@ -201,7 +213,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $('html').fadeOut(endAnimateBattle);
       }
     }
   }
@@ -217,7 +229,8 @@ function magicAttack(e){
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
-      $(".battle_screen").css({display:"none"});
+      $('.battle_screen').css({display: "none"});
+      $('html').fadeOut(endAnimateBattle);
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
@@ -240,7 +253,8 @@ function magicAttack(e){
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
-      $(".battle_screen").css({display:"none"});
+      $('.battle_screen').css({display: "none"});
+      $('html').fadeOut(endAnimateBattle);
     }
   }
 }
@@ -251,7 +265,7 @@ function tryToEscape(e){
     state = 0;
     $(".battle_screen").css({display: "none",});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $('html').fadeOut(endAnimateBattle);
       }
 
     }
