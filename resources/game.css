@@ -79,12 +79,11 @@ p2{
 }
 
 .buttons{
-  display: flex;
-  flex-direction: row;
+display:inline;
 }
 #fight{
-  height: 75px;
-  width: 100px;
+  height: 35px;
+  width: 80px;
   color: white;
   background-color: red;
   border: 5px;
@@ -93,11 +92,11 @@ p2{
   font-weight: bold;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   text-align: center;
-  font-size: 10px;
+  font-size: 15px;
 }
 #magic{
-  height: 75px;
-  width: 100px;
+  height: 35px;
+  width: 80px;
   color: white;
   background-color: blue;
   border: 5px;
@@ -106,11 +105,11 @@ p2{
   font-weight: bold;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   text-align: center;
-  font-size: 10px;
+  font-size: 15px;
 }
 #escape{
-  height: 75px;
-  width: 100px;
+  height: 35px;
+  width: 80px;
   color: white;
   background-color: goldenrod;
   border: 5px;
@@ -119,7 +118,7 @@ p2{
   font-weight: bold;
   font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
   text-align: center;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 #check{
