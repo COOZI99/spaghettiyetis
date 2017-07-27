@@ -5,7 +5,7 @@ function setup(){
   console.log('help');
   $("#item1").click(useItem);
   $("#item2").click(useItem);
-  $("#item2").click(useItem);
+  $("#item3").click(useItem);
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
@@ -32,7 +32,7 @@ function getMagic(){
 function useItem(e){
   var potion = $(e.currentTarget);
   var newHealth = getHealth() + 30;
-  console.log('No');
+  console.log(potion.text());
   if(potion.text() == " potion"){
   if(newHealth >= getMaxHealth()){
     console.log('help');
@@ -66,6 +66,10 @@ function getLevel(){
 
 function getMaxHealth(){
   return Number($('#maxHealth').text());
+}
+
+function getCheckpoint(){
+  return Number($('#checkpoint').text())
 }
 
 function createEnemy(){
@@ -146,8 +150,13 @@ function whileMoving(e){
     var doorT = $('body').height() - 386;
     var top = s;
     //console.log("right=" + right + " ,top= " + top);
-    if(right <= doorR && top >= doorT){
+    if(right <= doorR && top >= doorT && getCheckpoint() == 1){
+      $('#checkpoint').html(2 + '<input type = "hidden" name = "checkpoint" value=' + 2 + '>');
       window.location.href = "/game1?username=" + $('#username').val() + "&password=" + $('#password').val();
+    }
+    else if(right <= doorR && top >= doorT && getCheckpoint() == 2){
+      $('#checkpoint').html(3 + '<input type = "hidden" name = "checkpoint" value=' + 3 + '>');
+      window.location.href = "/game2?username=" + $('#username').val() + "&password=" + $('#password').val();
     }
 
   }
@@ -190,6 +199,7 @@ function beginFight(e){
       $(".battle_screen").css({display:"none"});
       if(state == 0){
         $('html').fadeOut(endAnimateBattle);
+      return;
       }
     }
     var newHealth = getHealth() - Enemy[2];
@@ -268,7 +278,15 @@ function tryToEscape(e){
       if(state == 0){
         $('html').fadeOut(endAnimateBattle);
       }
-
+    }
+    else{
+      var newHealth = getHealth() - Enemy[2];
+      if(newHealth <= 0){
+        newHealth = 0;
+        $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
+        window.location.href = "/"
+      }
+      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     }
 }
 
