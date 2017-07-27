@@ -80,3 +80,31 @@ p5{
   margin-left: 1280px;
   color: darkblue;
 }
+.menu{
+  display: flex;
+  padding: 50px;
+  border: 10px double blue;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: goldenrod;
+  color: darkblue;
+  font-size: 40px;
+  font-weight: bold;
+
+
+}
+#controls{
+
+  height: 250px;
+  width: 350px;
+}
+#door{
+  height: 200px;
+  width: 200px;
+}
+#check{
+  height: 200px;
+  width: 200px;
+}
