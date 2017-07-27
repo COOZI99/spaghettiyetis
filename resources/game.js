@@ -47,6 +47,10 @@ function getSpeed(){
   return Number($('#speed').text());
 }
 
+function getLevel(){
+  return Number($('#level').text());
+}
+
 function createEnemy(){
   var attack = Math.round(Math.random() * 5 + 2);
   var speed = Math.round(Math.random() * 5 + 8);
@@ -238,8 +242,12 @@ function tryToEscape(e){
 }
 
 function gainExp(){
-  var ex += getExp() + 10;
-  $('#exp').html(ex + '<input type = "hidden" name="experience" value')
+  var ex = getExp() + 10;
+  $('#exp').html(ex + '<input type = "hidden" name="experience" value' + ex + '>');
+  if(getExp() >= getExpNeeded()){
+    var level = getLevel() + 1;
+    $('#level').html(level + '<input type = "hidden" name="level" value' + level + '>');
+  }
 }
 
 $(document).ready(setup);
