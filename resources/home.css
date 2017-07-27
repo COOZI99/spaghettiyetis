@@ -4,7 +4,7 @@ h1 {
   text-align: center;
   color: darkblue;
   font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
-  
+
 }
 p {
   text-align: center;
@@ -71,4 +71,12 @@ body{
 #password{
    -webkit-text-security: disc;
 
+}
+p5{
+  position: absolute;
+  top:100;
+  right:1000;
+  margin-top: 500px;
+  margin-left: 1280px;
+  color: darkblue;
 }

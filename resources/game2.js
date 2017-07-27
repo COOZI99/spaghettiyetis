@@ -69,10 +69,10 @@ function getCheckpoint(){
 }
 
 function createEnemy(){
-  var attack = Math.round(Math.random() * 5 + 2);
+  var attack = Math.round(Math.random() * 5 + 20);
   var speed = Math.round(Math.random() * 5 + 8);
   Enemy = [];
-  Enemy.push("Boss", 200, attack, speed);
+  Enemy.push("Boss", 2000, attack, speed);
   $('#enemyH').text(Enemy[1]);
 }
 
@@ -169,16 +169,16 @@ function enemyFastMagic(){
 
 
 function enemyAttack(){
-  $("#enemy").attr('src', "../resources/bonesattack.gif");
+  $("#enemy").attr('src', "../resources/seemong.gif");
 
   setTimeout(function(){
     enemyGoBack();
-  }, 1100);
+  }, 1500);
 
 }
 
 function enemyGoBack(){
-  $("#enemy").attr('src', "../resources/bones-1-1.png");
+  $("#enemy").attr('src', "../resources/seemong.jpg");
 }
 
 function meAttackGif(){
@@ -234,6 +234,7 @@ function beginFight(e){
       $(".battle_screen").css({display:"none"});
       if(state == 0){
         $('html').fadeOut(endAnimateBattle);
+        endGame();
       return;
       }
     }
@@ -263,6 +264,7 @@ function beginFight(e){
       $(".battle_screen").css({display:"none"});
       if(state == 0){
         $('html').fadeOut(endAnimateBattle);
+        endGame();
       }
     }
   }
@@ -282,6 +284,7 @@ function magicAttack(e){
       state = 0;
       $('.battle_screen').css({display: "none"});
       $('html').fadeOut(endAnimateBattle);
+      endGame();
       return;
     }
     var newHealth = getHealth() - Enemy[2];
@@ -308,30 +311,18 @@ function magicAttack(e){
       state = 0;
       $('.battle_screen').css({display: "none"});
       $('html').fadeOut(endAnimateBattle);
+      endGame();
     }
   }
 }
 
-function tryToEscape(e){
-  var escape = Math.random();
-    if((escape * 101) > 40){
-    state = 0;
-    $(".battle_screen").css({display: "none",});
-      if(state == 0){
-        $('html').fadeOut(endAnimateBattle);
-      }
-    }
-    else{
-      var newHealth = getHealth() - Enemy[2];
-      if(newHealth <= 0){
-        newHealth = 0;
-        $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
-        window.location.href = "/"
-      }
-      $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
-    }
-}
+function endGame(){
+  $('#Victory').text("You Win!!!");
+  setTimeout(function(){
+    window.location.href = "/";
+  }, 5000);
 
+}
 function gainExp(){
   console.log("content of enemy" + Enemy);
   var ex = getExp() + 10;
@@ -351,7 +342,7 @@ function gainExp(){
     $('#maxHealth').html(maxHealth + '<input type = "hidden" name="maxHp" value=' + maxHealth + '>');
     var newNeed = getExpNeeded() + 10 * level;
     $('#expNeeded').html(newNeed + '<input type = "hidden" name="expNeeded" value=' + newNeed + '>');
-  }
+    }
 }
 
 $(document).ready(setup);
