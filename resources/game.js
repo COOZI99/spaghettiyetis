@@ -3,9 +3,12 @@ function setup(){
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
   console.log('help');
-  $("#item1").click(useItem)
-  $("#item2").click(useItem)
-  $("#item2").click(useItem)
+  $("#item1").click(useItem);
+  $("#item2").click(useItem);
+  $("#item2").click(useItem);
+  $("#fight").click(beginFight);
+  $("#magic").click(magicAttack);
+  $("#escape").click(tryToEscape);
 }
 
 var isFirst = true;
@@ -174,9 +177,7 @@ function endAnimateBattle(){
 function battle(){
   state = 1;
   $('html').fadeOut(beginAnimateBattle);
-  $("#fight").click(beginFight);
-  $("#magic").click(magicAttack);
-  $("#escape").click(tryToEscape);
+
   createEnemy();
 }
 
@@ -272,6 +273,7 @@ function tryToEscape(e){
 }
 
 function gainExp(){
+  console.log("content of enemy" + Enemy);
   var ex = getExp() + 10;
   $('#exp').html(ex + '<input type = "hidden" name="experience" value=' + ex + '>');
   if(getExp() >= getExpNeeded()){
