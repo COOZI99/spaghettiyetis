@@ -149,7 +149,9 @@ function beginAnimateBattle(){
 }
 
 function endAnimateBattle(){
-
+  $("#character").css({height: "61px", width: "63px"});
+  $("#character").css({marginLeft: d});
+  $("html").fadeIn();
 }
 
 function battle(){
@@ -170,7 +172,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $("html").fadeOut(endAnimateBattle);
       }
 
     }
@@ -196,7 +198,7 @@ function beginFight(e){
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $("html").fadeOut(endAnimateBattle);
       }
     }
   }
@@ -246,7 +248,8 @@ function tryToEscape(e){
     state = 0;
     $(".battle_screen").css({display: "none",});
       if(state == 0){
-        $("#character").css({marginLeft: d});
+        $("html").fadeOut(endAnimateBattle);
+
       }
 
     }
