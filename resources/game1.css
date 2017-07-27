@@ -79,6 +79,8 @@ p2{
 .buttons{
   display: flex;
   flex-direction: row;
+  
+
 
 }
 #fight{
