@@ -1,0 +1,42 @@
+body{
+  background-color: #D3D3D3;
+}
+
+.awesome{
+  display: flex;
+  padding: 50px;
+  border: 10px double blue;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: goldenrod;
+  color: darkblue;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  font-size: 20px;
+}
+#YESbutton{
+  border-color: blue;
+  box-shadow: 0px 0px 1px 7px darkblue;
+  color: ghostwhite;
+  background-color: darkblue;
+  height: 75px;
+  width: 250px;
+  font-size: 45px;
+  font-weight: bold;
+  border-radius: 2px 2px 2px 2px;
+
+}
+#NObutton{
+  border-color: blue;
+  box-shadow: 0px 0px 1px 7px darkblue;
+  color: ghostwhite;
+  background-color: darkblue;
+  height: 75px;
+  width: 250px;
+  font-size: 45px;
+  font-weight: bold;
+  border-radius: 2px 2px 2px 2px;
+
+
+}
