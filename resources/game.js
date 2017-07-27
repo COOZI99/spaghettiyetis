@@ -237,9 +237,6 @@ function tryToEscape(e){
 
 }
 
-function gainExp(){
-  var ex += getExp() + 10;
-  $('#exp').html(ex + '<input type = "hidden" name="experience" value')
-}
+
 
 $(document).ready(setup);
