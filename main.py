@@ -124,6 +124,7 @@ class GamePage2(webapp2.RequestHandler):
         template = env.get_template('game1.html')
         self.response.out.write(template.render(var))
 
+
 class saveData(webapp2.RequestHandler):
     def post(self):
         user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
