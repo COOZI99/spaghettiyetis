@@ -269,6 +269,7 @@ function beginFight(e){
   if(getSpeed() > Enemy[3]){
     meFastGif();
     Enemy[1] -= getAttack();
+    $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
@@ -297,6 +298,7 @@ function beginFight(e){
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     enemyFastAttack();
     Enemy[1] -= getAttack();
+    $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
@@ -316,11 +318,13 @@ function magicAttack(e){
   if(getSpeed() > Enemy[3]){
     fastMagicGif();
     Enemy[1] -= getMagic() * multi;
+    $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
       $('.battle_screen').css({display: "none"});
       $('html').fadeOut(endAnimateBattle);
+      return;
     }
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
@@ -339,7 +343,7 @@ function magicAttack(e){
     }
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     Enemy[1] -= getMagic() * multi;
-    $('#damage').text((getMagic() * multi))
+    $('#enemyH').text(Enemy[1]);
     enemyFastMagic();
     if(Enemy[1] <= 0){
       gainExp();
