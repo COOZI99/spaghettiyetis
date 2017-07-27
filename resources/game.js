@@ -171,7 +171,7 @@ function whileStatic(e){
 
 function beginAnimateBattle(){
   $('#character').css({height: "183px", width: "189px"});
-  $("#enemy").css({height: "183px", width: "150px"});
+  $("#enemy").css({height: "183px", width: "130px"});
   $(".battle_screen").css({display: "inline-block",});
   $('#character').css({marginLeft: '30%'});
   $('html').fadeIn();
@@ -190,8 +190,83 @@ function battle(){
   createEnemy();
 }
 
+function enemyFastAttack(){
+  $("#enemy").attr('src', "../resources/bonesattack.gif");
+
+  setTimeout(function(){
+    enemyGoBack();
+    meAttackGif();
+  }, 1100);
+}
+
+function enemyFastMagic(){
+  $("#enemy").attr('src', "../resources/bonesattack.gif");
+
+  setTimeout(function(){
+    enemyGoBack();
+    meMagicGif();
+  }, 1100);
+}
+
+
+function enemyAttack(){
+  $("#enemy").attr('src', "../resources/bonesattack.gif");
+
+  setTimeout(function(){
+    enemyGoBack();
+  }, 1100);
+
+}
+
+function enemyGoBack(){
+  $("#enemy").attr('src', "../resources/bones-1-1.png");
+}
+
+function meAttackGif(){
+  $("#character").attr('src', "../resources/swordattack.gif");
+
+    setTimeout(function(){
+      goBack();
+    }, 1100);
+
+}
+
+function meMagicGif(){
+  $("#character").attr('src', "../resources/MagicFight.gif");
+
+    setTimeout(function(){
+      goBack();
+    }, 1100);
+
+}
+
+function meFastkGif(){
+  $("#character").attr('src', "../resources/swordattack.gif");
+
+    setTimeout(function(){
+      goBack();
+      enemyAttack();
+    }, 1100);
+
+}
+
+function fastMagicGif(){
+  $("#character").attr('src', "../resources/MagicFight.gif");
+
+    setTimeout(function(){
+      goBack();
+      enemyAttack();
+    }, 1100);
+
+}
+
+function goBack(){
+    $("#character").delay(800).attr('src', "../resources/walkdown1.png");
+}
+
 function beginFight(e){
   if(getSpeed() > Enemy[3]){
+    meFastGif();
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
       gainExp();
@@ -211,6 +286,7 @@ function beginFight(e){
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
   }
   else{
+
     var newHealth = getHealth() - Enemy[2];
     if(newHealth <= 0){
       newHealth = 0;
@@ -218,6 +294,7 @@ function beginFight(e){
       window.location.href = "/"
     }
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
+    enemyFastAttack();
     Enemy[1] -= getAttack();
     if(Enemy[1] <= 0){
       gainExp();
@@ -236,6 +313,7 @@ function beginFight(e){
 function magicAttack(e){
   var multi = Math.round(Math.random() * 4 + 0.5)
   if(getSpeed() > Enemy[3]){
+    fastMagicGif();
     Enemy[1] -= getMagic() * multi;
     if(Enemy[1] <= 0){
       gainExp();
@@ -261,6 +339,7 @@ function magicAttack(e){
     $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
     Enemy[1] -= getMagic() * multi;
     $('#damage').text((getMagic() * multi))
+    enemyFastMagic();
     if(Enemy[1] <= 0){
       gainExp();
       state = 0;
