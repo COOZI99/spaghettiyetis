@@ -25,6 +25,7 @@ class User(ndb.Model):
     exp_needed = ndb.IntegerProperty()
     checkpoint = ndb.IntegerProperty()
     hp = ndb.IntegerProperty()
+    max_hp = ndb.IntegerProperty()
     attack = ndb.IntegerProperty()
     mp = ndb.IntegerProperty()
     speed = ndb.IntegerProperty()
@@ -71,6 +72,7 @@ class NewUserPage(webapp2.RequestHandler):
                         exp_needed = 20,
                         checkpoint = 1,
                         hp = 40,
+                        max_hp = 40,
                         attack = 5,
                         mp = 5,
                         speed = 10,
@@ -128,6 +130,7 @@ class saveData(webapp2.RequestHandler):
                     exp_needed = long(self.request.get('expNeeded')),
                     checkpoint = long(self.request.get('checkpoint')),
                     hp = long(self.request.get('hp')),
+                    max_hp = long(self.request.get('maxHp')),
                     attack = long(self.request.get('attack')),
                     mp = long(self.request.get('magicA')),
                     speed = long(self.request.get('speed')),

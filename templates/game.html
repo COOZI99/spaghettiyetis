@@ -8,12 +8,13 @@
   <title> Redhead Bedhead </title>
 </head>
 <body>
-<a id = "Logout" href="/"><input id= "logout" type="button" value = "Logout"/></a> 
+<a id = "Logout" href="/"><input id= "logout" type="button" value = "Logout"/></a>
 <form method="post" action="/save_data">
   <section class = "status"/>
     <div class= "monkeys">
       <div class= "level"> <p1> Level: &nbsp; </p1> <p2 id = "level"> {{user.level}}<input type="hidden" name="level" value="{{user.level}}"></input></p2></div>
-      <div  class= "health"> <p1>Health:&nbsp;</p1> <p2 id = "health"> {{user.hp}} <input type="hidden" name="hp" value="{{user.hp}}"></input> </p2> </div>
+      <div  class= "health"> <p1>Health:&nbsp;</p1> <p2 id = "health"> {{user.hp}} <input type="hidden" name="hp" value="{{user.hp}}"></input> </p2>
+                  <p2 id = "maxHealth">/{{user.max_hp}} <input type="hidden" name="maxHp" value="{{user.max_hp}}"></input></p></div>
       <div class= "attack"> <p1>Attack:&nbsp;</p1><p2 id = "attack"> {{user.attack}} <input type="hidden" name="attack" value="{{user.attack}}"></input></p2></div>
       <div class= "magic"> <p1>Magic:&nbsp;</p1><p2 id = "magicA"> {{user.mp}} <input type="hidden" name="magicA" value="{{user.mp}}"></input> </p2></div>
       <div class= "speed"> <p1>Speed:&nbsp;</p1> <p2 id = "speed"> {{user.speed}} <input type="hidden" name="speed" value="{{user.speed}}"></input></p2></div>
