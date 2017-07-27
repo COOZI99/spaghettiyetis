@@ -115,7 +115,14 @@ class GamePage1(webapp2.RequestHandler):
     def post(self):
         invalid = False
 
+class GamePage2(webapp2.RequestHandler):
+    def get(self):
+        user_key = ndb.Key('User', self.request.get('username'), 'User', self.request.get('password'))
+        user = user_key.get()
 
+        var = {'user': user}
+        template = env.get_template('game1.html')
+        self.response.out.write(template.render(var))
 
 class saveData(webapp2.RequestHandler):
     def post(self):
@@ -143,11 +150,19 @@ class saveData(webapp2.RequestHandler):
         user.put()
         username = user.username
         password = user.password
-        self.redirect('/game?username=' + username + '&password=' + password)
+        if user.checkpoint == 1:
+            self.redirect('/game?username=' + username + '&password=' + password)
+        elif user.checkpoint == 2:
+            self.redirect('/game1?username=' + username + '&password=' + password)
+        elif user.checkpoint == 3:
+            self.redirect('/game2?username=' + username + '&password=' + password)
+
+
 app=webapp2.WSGIApplication([
 ('/', HomePage),
 ('/new_user', NewUserPage),
 ('/game', GamePage),
 ('/save_data', saveData),
-('/game1', GamePage1)
+('/game1', GamePage1),
+('/game2', GamePage2)
 ])
