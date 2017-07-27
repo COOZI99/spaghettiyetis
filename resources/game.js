@@ -134,11 +134,17 @@ function whileStatic(e){
   isFirst = true;
   $("#character").attr('src', "../resources/walkdown1.png");
 }
+function animateBattle(){
+  $("#character").css({height: "25%", width: "25%"});
+  $("#enemy").css({height: "150%", width: "150%"});
+  $(".battle_screen").css({display: "inline-block",});
+  $("#character").css({marginLeft: "40%",});
+  $("html").fadeIn();
+}
 
 function battle(){
   state = 1;
-  $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "40%",});
+  $("html").fadeOut(animateBattle);
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
