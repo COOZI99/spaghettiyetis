@@ -81,11 +81,10 @@ p2{
 .buttons{
   display: flex;
   flex-direction: row;
-
 }
 #fight{
-  height: 18px;
-  width: 45px;
+  height: 75px;
+  width: 100px;
   color: white;
   background-color: red;
   border: 5px;
@@ -97,8 +96,8 @@ p2{
   font-size: 10px;
 }
 #magic{
-  height: 18px;
-  width: 45px;
+  height: 75px;
+  width: 100px;
   color: white;
   background-color: blue;
   border: 5px;
@@ -110,8 +109,8 @@ p2{
   font-size: 10px;
 }
 #escape{
-  height: 18px;
-  width: 45px;
+  height: 75px;
+  width: 100px;
   color: white;
   background-color: goldenrod;
   border: 5px;
