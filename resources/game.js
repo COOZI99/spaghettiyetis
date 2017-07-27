@@ -240,7 +240,7 @@ function meMagicGif(){
 
 }
 
-function meFastkGif(){
+function meFastGif(){
   $("#character").attr('src', "../resources/swordattack.gif");
 
     setTimeout(function(){
