@@ -139,17 +139,22 @@ function whileStatic(e){
   isFirst = true;
   $("#character").attr('src', "../resources/walkdown1.png");
 }
-function animateBattle(){
-  $("#character").css({height: "25%", width: "25%"});
-  $("#enemy").css({height: "150%", width: "150%"});
+
+function beginAnimateBattle(){
+  $("#character").css({height: "183px", width: "189px"});
+  $("#enemy").css({height: "183px", width: "150px"});
   $(".battle_screen").css({display: "inline-block",});
-  $("#character").css({marginLeft: "40%",});
+  $("#character").css({marginLeft: "30%",});
   $("html").fadeIn();
+}
+
+function endAnimateBattle(){
+
 }
 
 function battle(){
   state = 1;
-  $("html").fadeOut(animateBattle);
+  $("html").fadeOut(beginAnimateBattle);
   $("#fight").click(beginFight);
   $("#magic").click(magicAttack);
   $("#escape").click(tryToEscape);
