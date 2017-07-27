@@ -8,7 +8,7 @@
   <title> Redhead Bedhead </title>
 </head>
 <body>
-<a id = "Logout" href="/"><input id= "logout1" type="button" value = "Logout"/></a>
+<a id = "Logout" href="/"> <input id="logout" type="button" value = "Logout"/></a>
 <form method="post" action="/save_data">
   <section class = "status"/>
     <div class= "monkeys">
@@ -17,9 +17,9 @@
       <div class= "attack"> <p1>Attack:&nbsp;</p1><p2 id = "attack"> {{user.attack}} <input type="hidden" name="attack" value="{{user.attack}}"></input></p2></div>
       <div class= "magic"> <p1>Magic:&nbsp;</p1><p2 id = "magicA"> {{user.mp}} <input type="hidden" name="magicA" value="{{user.mp}}"></input> </p2></div>
       <div class= "speed"> <p1>Speed:&nbsp;</p1> <p2 id = "speed"> {{user.speed}} <input type="hidden" name="speed" value="{{user.speed}}"></input></p2></div>
-      <div class= "items"> <p1>Items:&nbsp;</p1></div><div><p2  id = "item1"> {{user.item1}} <input type="hidden" name="item1" value="{{user.item1}}"></input></p2></div>
-      <div class= "items"> <p2 id = "item2"> {{user.item2}} <input type="hidden" name="item2" value="{{user.item2}}"></input></p2></div>
-      <div class= "items"> <p2 id = "item3"> {{user.item3}} <input type="hidden" name="item3" value="{{user.item3}}"></input> </p2></div>
+      <div class= "items"> <p1>Items:&nbsp;</p1></div><div><p2  id = "item1"><input id="potions" type="button" name="item1" value="{{user.item1}}"></input></p2></div>
+      <div class= "items"> <p2 id = "item2"><input id="potions" type="button" name="item2" value="{{user.item2}}"></input></p2></div>
+      <div class= "items"> <p2 id = "item3"><input id="potions" type="button" name="item3" value="{{user.item3}}"></input> </p2></div>
       <div class= "exp"> <p1>exp:&nbsp;</p1><p2 id = "exp"> {{user.experience}} <input type="hidden" name="experience" value="{{user.experience}}"></input></p2></div>
       <div class= "expneeded"> <p1>exp needed:&nbsp;</p1><p2 id = "expNeeded"> {{user.exp_needed}} <input type="hidden" name="expNeeded" value="{{user.exp_needed}}"></input></p2></div>
       <div class= "checkpoint"> <p1>Checkpoint:&nbsp;</p1><p2 id = "checkpoint">{{user.checkpoint}}<input type="hidden" name="checkpoint" value="{{user.checkpoint}}"></input></p2></div>

@@ -3,6 +3,9 @@ function setup(){
   $('body').keydown(whileMoving);
   $('body').keyup(whileStatic);
   console.log('help');
+  $("#item1").click(useItem)
+  $("#item2").click(useItem)
+  $("#item2").click(useItem)
 }
 
 var isFirst = true;
@@ -23,17 +26,11 @@ function getMagic(){
   return Number($('#magicA').text());
 }
 
-function getItem1(){
-  return $('#item1').text();
+function useItem(){
+  var newHealth = getHealth() + 30;
+  $('#health').html(newHealth + '<input type = "hidden" name = "hp" value=' + newHealth + '>');
 }
 
-function getItem2(){
-  return $('#item1').text();
-}
-
-function getItem3(){
-  return $('#item1').text();
-}
 
 function getExp(){
   return Number($('#exp').text());
@@ -245,6 +242,7 @@ function tryToEscape(e){
 
 }
 
+<<<<<<< HEAD
 function gainExp(){
   var ex = getExp() + 10;
   $('#exp').html(ex + '<input type = "hidden" name="experience" value' + ex + '>');
@@ -264,5 +262,7 @@ function gainExp(){
   }
 }
 
+=======
+>>>>>>> ca83872a65d4d0d4ed573c5ca7585d30113054af
 $(document).ready(setup);
 //I Changed some stuff
