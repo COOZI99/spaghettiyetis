@@ -150,7 +150,7 @@ function battle(){
 }
 
 function enemyFastAttack(){
-  $("#enemy").attr('src', "../resources/bonesattack.gif");
+  $("#enemy").attr('src', "../resources/seemong.gif");
 
   setTimeout(function(){
     enemyGoBack();
@@ -159,7 +159,7 @@ function enemyFastAttack(){
 }
 
 function enemyFastMagic(){
-  $("#enemy").attr('src', "../resources/bonesattack.gif");
+  $("#enemy").attr('src', "../resources/seemong.gif");
 
   setTimeout(function(){
     enemyGoBack();
