@@ -72,7 +72,7 @@ function createEnemy(){
   var attack = Math.round(Math.random() * 5 + 20);
   var speed = Math.round(Math.random() * 5 + 8);
   Enemy = [];
-  Enemy.push("Boss", 2000, attack, speed);
+  Enemy.push("Boss", 200, attack, speed);
   $('#enemyH').text(Enemy[1]);
 }
 
@@ -142,7 +142,10 @@ function endAnimateBattle(){
   $('#character').css({marginLeft: d});
   $('html').fadeIn();
 }
+
+
 function battle(){
+  $('#nani2')[0].play();
   state = 1;
   $('html').fadeOut(beginAnimateBattle);
 
@@ -230,6 +233,7 @@ function beginFight(e){
     $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
       gainExp();
+      $('#nani2')[0].play();
       state = 0;
       $(".battle_screen").css({display:"none"});
       if(state == 0){
@@ -259,6 +263,7 @@ function beginFight(e){
     Enemy[1] -= getAttack();
     $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
+      $('#nani2')[0].play();
       gainExp();
       state = 0;
       $(".battle_screen").css({display:"none"});
@@ -280,6 +285,7 @@ function magicAttack(e){
     Enemy[1] -= getMagic() * multi;
     $('#enemyH').text(Enemy[1]);
     if(Enemy[1] <= 0){
+      $('#nani2')[0].play();
       gainExp();
       state = 0;
       $('.battle_screen').css({display: "none"});
@@ -307,6 +313,7 @@ function magicAttack(e){
     $('#enemyH').text(Enemy[1]);
     enemyFastMagic();
     if(Enemy[1] <= 0){
+      $('#nani2')[0].play();
       gainExp();
       state = 0;
       $('.battle_screen').css({display: "none"});
@@ -330,7 +337,7 @@ function gainExp(){
   if(getExp() >= getExpNeeded()){
     var level = getLevel() + 1;
     var attack = getAttack() + 5;
-    var magic = getMagic() + 1;
+    var magic = getMagic() + 5;
     var maxHealth = getMaxHealth() + 10;
     var health = getMaxHealth() + 10;
     var speed = getSpeed() + 5;

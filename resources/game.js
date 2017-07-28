@@ -140,11 +140,8 @@ function whileMoving(e){
     var top = s;
     var cabinT = 50;
     if(right <= cabinR && top <= cabinT){
-      if($(location).attr('href') == "http://localhost:8080/game1?username=" +
-          $('#username').val() + "&password=" + $('#password').val()){
-            $('#checkpoint').html(2 + '<input type = "hidden" name = "checkpoint" value=' + 2 + '>');
-          }
       $('form').submit();
+
     }
     var right = $('body').width() - d;
     var doorR = 100;
@@ -375,7 +372,6 @@ function tryToEscape(e){
 }
 
 function gainExp(){
-  console.log("content of enemy" + Enemy);
   var ex = getExp() + 10;
   $('#exp').html(ex + '<input type = "hidden" name="experience" value=' + ex + '>');
   if(getExp() >= getExpNeeded()){
@@ -389,7 +385,7 @@ function gainExp(){
     $('#attack').html(attack + '<input type = "hidden" name="attack" value=' + attack + '>');
     $('#magicA').html(magic + '<input type = "hidden" name="magicA" value=' + magic + '>');
     $('#speed').html(speed + '<input type = "hidden" name="speed" value=' + speed + '>');
-    $('#health').html(health + '<input type = "hidden" name="health" value=' + health + '>');
+    $('#health').html(health + '<input type = "hidden" name="hp" value=' + health + '>');
     $('#maxHealth').html(maxHealth + '<input type = "hidden" name="maxHp" value=' + maxHealth + '>');
     var newNeed = getExpNeeded() + 10 * level;
     $('#expNeeded').html(newNeed + '<input type = "hidden" name="expNeeded" value=' + newNeed + '>');
