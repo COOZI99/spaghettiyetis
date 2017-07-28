@@ -9,7 +9,7 @@
 </head>
 <body>
 <a id = "Logout" href="/"> <input id="logout" type="button" value = "Logout"/></a>
-<p id = "Victory"></p>
+
 <form method="post" action="/save_data">
   <section class = "status"/>
     <div class= "monkeys">
@@ -28,6 +28,7 @@
 
     </div>
   </section>
+  <p id = "Victory"></p>
   <input id = "username" type = "hidden" name="username" value="{{user.username}}"></input>
   <input id = "password" type = "hidden" name = "password" value="{{user.password}}"></input>
 </form>
