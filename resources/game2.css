@@ -195,10 +195,19 @@ display:inline;
   text-align: center;
 
 }
+
 #victory{
 
 }
 
 #nani2, #naisu{
   display: none;
+
+#Victory{
+  text-align: center;
+  font-size: 100px;
+  font-family: "Futura", Impact, Helvetica, Arial, sans-serif;
+  color: goldenrod;
+  font-weight: bold;
+
 }
