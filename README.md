@@ -6,7 +6,7 @@ Authors:
 Anna - Anna is awesome, and much better than Jairo.
 =======
 
-Bianca L
+Bianca Lara, adding git to my computer rn
 
 =======
 Anna - Anna is awesome.
